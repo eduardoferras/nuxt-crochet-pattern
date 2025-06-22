@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: crochet-pattern
+    image: node:22.16.0-alpine3.22
+    volumes:
+      - ../../:/home/node/app
+    working_dir: /home/node/app
+    command: sh -c "npm i && tail -f /dev/null"
+    ports:
+      - 3000:3000
