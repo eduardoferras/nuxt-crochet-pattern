@@ -24,7 +24,7 @@ logs
 !.env.example
 
 # vscode
-.vscode/
+.vscode/*
 !.vscode/extensions.json
 
 # :Zone.Identifier
