@@ -26,3 +26,6 @@ logs
 # vscode
 .vscode/
 !.vscode/extensions.json
+
+# :Zone.Identifier
+**/*.Identifier
