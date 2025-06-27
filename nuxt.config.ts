@@ -7,5 +7,6 @@ export default defineNuxtConfig({
 		config: {
 			autoInit: false
 		}
-	}
+	},
+	srcDir: 'src/',
 })
