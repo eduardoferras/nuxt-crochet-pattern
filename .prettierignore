@@ -7,7 +7,6 @@ node_modules/
 
 # Ignore specific configuration files
 *.config.js
-*.config.ts
 
 # Ignore environment variables files
 .env
