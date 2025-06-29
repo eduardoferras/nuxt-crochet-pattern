@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
 	compatibilityDate: '2025-05-15',
 	devtools: { enabled: true },
-	modules: ['@nuxt/image', '@nuxt/icon', '@nuxt/eslint'],
+	modules: ['@nuxt/image', '@nuxt/icon', '@nuxt/eslint', '@nuxt/test-utils/module'],
 	eslint: {
 		config: {
 			autoInit: false
