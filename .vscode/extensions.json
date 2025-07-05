@@ -4,6 +4,7 @@
 		"esbenp.prettier-vscode",
 		"nuxtr.nuxt-vscode-extentions",
 		"editorconfig.editorconfig",
-		"docker.docker"
+		"docker.docker",
+		"ms-vscode-remote.remote-containers"
 	]
 }

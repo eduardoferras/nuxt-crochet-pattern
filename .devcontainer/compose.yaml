@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ../:/workspace:cached
+    ports:
+      - 3000:3000
+    command: sh
+    entrypoint: ['/usr/local/bin/entrypoint.sh']
+    tty: true
+    stdin_open: true
+    environment:
+      - NODE_ENV=development
