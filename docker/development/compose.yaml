@@ -1,0 +1,13 @@
+services:
+  app:
+    image: node:22.16.0-alpine3.22
+    working_dir: /home/node/app
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ../../:/home/node/app:cached
+    ports:
+      - 3000:3000
+    command: ['sh', '-c', 'npm i && npm run dev']
+    tty: true
+    stdin_open: true
