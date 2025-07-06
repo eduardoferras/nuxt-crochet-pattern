@@ -8,7 +8,6 @@ services:
     ports:
       - 3000:3000
     command: sh
-    entrypoint: ['/usr/local/bin/entrypoint.sh']
     tty: true
     stdin_open: true
     environment:

@@ -11,10 +11,11 @@
 				"esbenp.prettier-vscode",
 				"nuxtr.nuxt-vscode-extentions",
 				"editorconfig.editorconfig",
-				"docker.docker"
+				"docker.docker",
+				"vitest.explorer"
 			]
 		}
 	},
 	"overrideCommand": true,
-  "postCreateCommand": "npm install"
+	"postCreateCommand": "npm install"
 }
