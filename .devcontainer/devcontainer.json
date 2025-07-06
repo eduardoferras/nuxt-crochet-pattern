@@ -17,5 +17,5 @@
 		}
 	},
 	"overrideCommand": true,
-	"postCreateCommand": "npm install"
+	"postCreateCommand": "npm install  && npm run dev"
 }
