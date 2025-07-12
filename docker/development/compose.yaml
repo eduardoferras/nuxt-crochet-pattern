@@ -1,5 +1,6 @@
 services:
   app:
+    container_name: crochet-patterns
     image: node:22.16.0-alpine3.22
     working_dir: /home/node/app
     environment:
