@@ -9,13 +9,12 @@ describe('AppHeader.vue', () => {
 		expect(wrapper.find('header').exists()).toBe(true)
 	})
 
-	it('should render a link that points to the homepage', async () => {
+	it('should render a link to the homepage', async () => {
 		const wrapper = await mountSuspended(AppHeader)
 
-		const link = wrapper.find('a')
+		const link = wrapper.find('a[href="/"]')
 
 		expect(link.exists()).toBe(true)
-		expect(link.attributes('href')).toBe('/')
 	})
 
 	it('should render a logo with aria-label text', async () => {
@@ -32,5 +31,8 @@ describe('AppHeader.vue', () => {
 		const description = wrapper.find('p')
 
 		expect(description.exists()).toBe(true)
+		expect(description.text()).toBe(
+			'Receitas de Crochê para Vestuário, Amigurumi e Datas Comemorativas'
+		)
 	})
 })

@@ -8,7 +8,7 @@
 						label="Logo Receitas de Crochê"
 						role="img"
 						width="186"
-						height="14"
+						height="13"
 						color="#683000"
 					/>
 				</AppLink>
@@ -37,7 +37,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 <style scoped lang="scss">
 .AppHeader {
 	background-color: $color-secondary;
-	height: 7.6rem;
+	height: 6.8rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
