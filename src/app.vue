@@ -1,7 +1,27 @@
 <template>
-	<div>
+	<div class="App">
 		<AppHeader />
-		<NuxtPage />
+		<main class="App__main">
+			<NuxtPage />
+		</main>
 		<AppFooter />
 	</div>
 </template>
+<script setup lang="ts">
+useHead({
+	titleTemplate: '%s | Receitas de Crochê'
+})
+</script>
+
+<style scoped lang="scss">
+.App {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	&__main {
+		flex: 1;
+		padding: 2.8rem 0;
+	}
+}
+</style>
