@@ -1,8 +1,8 @@
 <template>
-	<footer class="AppFooter">
+	<footer class="footer">
 		<AppContainer>
-			<div class="AppFooter__box">
-				<div class="AppFooter__content">
+			<div class="footer__box">
+				<div class="footer__content">
 					<AppLink to="/">
 						<SvgIcon
 							name="rdc-logo"
@@ -13,13 +13,13 @@
 							color="#683000"
 						/>
 					</AppLink>
-					<section class="AppFooter__policies">
+					<section class="footer__policies">
 						<AppLink to="/politica-de-privacidade">Política de Privacidade</AppLink>
 						|
 						<AppLink to="/politica-de-troca-devolucao-e-reembolso">Troca e Reembolso</AppLink>
 					</section>
 				</div>
-				<section class="AppFooter__copyright">
+				<section class="footer__copyright">
 					© {{ currentYear }} Receitas de Crochê. Todos os direitos reservados.
 				</section>
 			</div>
@@ -30,7 +30,7 @@
 const currentYear = new Date().getFullYear()
 </script>
 <style scoped lang="scss">
-.AppFooter {
+.footer {
 	background-color: $color-secondary;
 	padding: 1.6rem 0;
 	display: flex;

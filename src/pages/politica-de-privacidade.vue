@@ -1,12 +1,12 @@
 <template>
-	<section class="PrivacyPolicy">
+	<section class="privacy-policy">
 		<AppContainer>
 			<header>
-				<h1 class="PrivacyPolicy__title">Política de Privacidade</h1>
+				<h1 class="privacy-policy__title">Política de Privacidade</h1>
 			</header>
 			<section>
-				<h2 class="PrivacyPolicy__subtitle">Coleta de Informações Pessoais</h2>
-				<p class="PrivacyPolicy__text">
+				<h2 class="privacy-policy__subtitle">Coleta de Informações Pessoais</h2>
+				<p class="privacy-policy__text">
 					Ao acessar nosso site ou utilizar nossos serviços, certas informações são registradas para
 					melhorar sua experiência. Os dados coletados podem incluir nome, e-mail, telefone,
 					localização, gênero, faixa etária, entre outros. Esse processo respeita a Lei de Proteção
@@ -16,16 +16,16 @@
 				</p>
 			</section>
 			<section>
-				<h2 class="PrivacyPolicy__subtitle">Dados de Publicidade Online</h2>
-				<p class="PrivacyPolicy__text">
+				<h2 class="privacy-policy__subtitle">Dados de Publicidade Online</h2>
+				<p class="privacy-policy__text">
 					Ao interagir com nossos anúncios, dados como IP, provedor de acesso, navegador, tempo de
 					permanência e conteúdos acessados podem ser coletados para aprimorar campanhas
 					publicitárias.
 				</p>
 			</section>
 			<section>
-				<h2 class="PrivacyPolicy__subtitle">Dados de Navegação no Site</h2>
-				<p class="PrivacyPolicy__text">
+				<h2 class="privacy-policy__subtitle">Dados de Navegação no Site</h2>
+				<p class="privacy-policy__text">
 					Informações como endereço IP, navegador, provedor de Internet e dados pessoais podem ser
 					armazenadas via cookies e web beacons. Essas tecnologias ajudam a entender sua interação
 					com o site e melhoram nossos serviços. Você pode desativar os cookies nas configurações do
@@ -33,8 +33,8 @@
 				</p>
 			</section>
 			<section>
-				<h2 class="PrivacyPolicy__subtitle">Sites Externos</h2>
-				<p class="PrivacyPolicy__text">
+				<h2 class="privacy-policy__subtitle">Sites Externos</h2>
+				<p class="privacy-policy__text">
 					Este site pode conter links para páginas externas. Nossa política de privacidade não se
 					aplica a esses sites. Recomendamos que você leia os termos de privacidade deles. Não nos
 					responsabilizamos por práticas de terceiros.
@@ -49,7 +49,7 @@ useHead({
 })
 </script>
 <style scoped lang="scss">
-.PrivacyPolicy {
+.privacy-policy {
 	&__title,
 	&__subtitle,
 	&__text {

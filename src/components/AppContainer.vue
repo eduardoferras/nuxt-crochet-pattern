@@ -1,11 +1,11 @@
 <template>
-	<div class="AppContainer">
+	<div class="container">
 		<slot />
 	</div>
 </template>
 
 <style scoped lang="scss">
-.AppContainer {
+.container {
 	padding: 0 $columnPadding;
 	width: 100%;
 	max-width: calc($layoutWidth + (2 * $columnPadding));

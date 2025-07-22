@@ -1,7 +1,7 @@
 <template>
-	<header :class="{ AppHeader: true, sticky: isSticky }">
+	<header :class="{ 'header--sticky': isSticky }" class="header">
 		<AppContainer>
-			<div class="AppHeader__box">
+			<div class="header__content">
 				<AppLink to="/">
 					<SvgIcon
 						name="rdc-logo"
@@ -12,7 +12,7 @@
 						color="#683000"
 					/>
 				</AppLink>
-				<p class="AppHeader__text">
+				<p class="header__text">
 					Receitas de Crochê para <strong>Vestuário</strong>, <strong>Amigurumi</strong> e
 					<strong>Datas Comemorativas</strong>
 				</p>
@@ -35,7 +35,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
 <style scoped lang="scss">
-.AppHeader {
+.header {
 	background-color: $color-secondary;
 	height: 6.8rem;
 	display: flex;
@@ -43,13 +43,13 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 	justify-content: center;
 	transition: all 0.3s ease;
 
-	&.sticky {
+	&--sticky {
 		position: sticky;
 		top: 0;
 		z-index: 1000;
 	}
 
-	&__box {
+	&__content {
 		display: flex;
 		flex-direction: column;
 		gap: 0.8rem;
