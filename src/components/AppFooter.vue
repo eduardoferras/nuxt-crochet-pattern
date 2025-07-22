@@ -19,7 +19,7 @@
 						<AppLink to="/politica-de-troca-devolucao-e-reembolso">Troca e Reembolso</AppLink>
 					</section>
 				</div>
-				<section class="footer__copyright">
+				<section class="footer__copyright" aria-label="copyright">
 					© {{ currentYear }} Receitas de Crochê. Todos os direitos reservados.
 				</section>
 			</div>

@@ -28,7 +28,7 @@ describe('AppFooter.vue', () => {
 		const currentYear = new Date().getFullYear()
 		const wrapper = await mountSuspended(AppFooter)
 
-		const description = wrapper.find('section.AppFooter__copyright')
+		const description = wrapper.find('[aria-label="copyright"]')
 
 		expect(description.exists()).toBe(true)
 		expect(description.text()).toBe(

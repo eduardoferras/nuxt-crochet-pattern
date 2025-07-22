@@ -6,7 +6,7 @@ describe('politica-de-troca-devolucao-e-reembolso.vue', () => {
 	it('should render the main title correctly', async () => {
 		const wrapper = await mountSuspended(RefundPolicy)
 
-		const title = wrapper.find('h1.RefundPolicy__title')
+		const title = wrapper.find('h1')
 
 		expect(title.exists()).toBe(true)
 		expect(title.text()).toBe('Política de Troca, Devolução e Reembolso')
@@ -15,7 +15,7 @@ describe('politica-de-troca-devolucao-e-reembolso.vue', () => {
 	it('should contain all expected subtitles', async () => {
 		const wrapper = await mountSuspended(RefundPolicy)
 
-		const subtitles = wrapper.findAll('h2.RefundPolicy__subtitle')
+		const subtitles = wrapper.findAll('h2')
 
 		const expectedSubtitles = [
 			'Produtos digitais',
@@ -32,11 +32,19 @@ describe('politica-de-troca-devolucao-e-reembolso.vue', () => {
 		})
 	})
 
-	it('should render paragraphs correctly', async () => {
+	it('should render a <p> or <ul> immediately after each <h2>', async () => {
 		const wrapper = await mountSuspended(RefundPolicy)
+		const h2Elements = wrapper.findAll('h2')
 
-		const paragraphs = wrapper.findAll('p.RefundPolicy__text')
+		h2Elements.forEach((h2) => {
+			const nextEl = h2.element.nextElementSibling
 
-		expect(paragraphs.length).toBeGreaterThan(0)
+			expect(nextEl).toBeTruthy()
+
+			const tag = nextEl!.tagName.toLowerCase()
+			const allowedTags = ['p', 'ul']
+
+			expect(allowedTags).toContain(tag)
+		})
 	})
 })

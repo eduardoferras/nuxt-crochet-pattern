@@ -6,7 +6,7 @@ describe('politica-de-privacidade.vue', () => {
 	it('should render the main title correctly', async () => {
 		const wrapper = await mountSuspended(PrivacyPolicy)
 
-		const title = wrapper.find('h1.PrivacyPolicy__title')
+		const title = wrapper.find('h1')
 
 		expect(title.exists()).toBe(true)
 		expect(title.text()).toBe('Política de Privacidade')
@@ -15,7 +15,7 @@ describe('politica-de-privacidade.vue', () => {
 	it('should contain all expected subtitles', async () => {
 		const wrapper = await mountSuspended(PrivacyPolicy)
 
-		const subtitles = wrapper.findAll('h2.PrivacyPolicy__subtitle')
+		const subtitles = wrapper.findAll('h2')
 
 		const expectedSubtitles = [
 			'Coleta de Informações Pessoais',
@@ -31,11 +31,15 @@ describe('politica-de-privacidade.vue', () => {
 		})
 	})
 
-	it('should render paragraphs correctly', async () => {
+	it('should render a <p> immediately after each <h2>', async () => {
 		const wrapper = await mountSuspended(PrivacyPolicy)
+		const h2Elements = wrapper.findAll('h2')
 
-		const paragraphs = wrapper.findAll('p.PrivacyPolicy__text')
+		h2Elements.forEach((h2) => {
+			const next = h2.element.nextElementSibling
 
-		expect(paragraphs.length).toBeGreaterThan(0)
+			expect(next).toBeTruthy()
+			expect(next?.tagName.toLowerCase()).toBe('p')
+		})
 	})
 })
