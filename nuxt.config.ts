@@ -2,6 +2,9 @@ import { fileURLToPath, URL } from 'node:url'
 
 export default defineNuxtConfig({
 	compatibilityDate: '2025-05-15',
+	nitro: {
+		preset: process.env.NITRO_PRESET
+	},
 	devtools: { enabled: true },
 	modules: [
 		'@nuxt/image',
