@@ -1,6 +1,11 @@
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineNuxtConfig({
+	app: {
+		head: {
+			link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=2' }]
+		}
+	},
 	compatibilityDate: '2025-05-15',
 	nitro: {
 		preset: process.env.NITRO_PRESET
