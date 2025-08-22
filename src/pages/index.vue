@@ -1,17 +1,12 @@
 <template>
-	<h1 aria-hidden="true">Receitas de Crochê</h1>
+	<div>
+		<h1 aria-hidden="true" class="visually-hidden">Receitas de Crochê</h1>
+		<ProductTile />
+	</div>
 </template>
-<style scoped>
-h1 {
-	border: 0;
-	position: absolute;
-	z-index: -1;
-	clip: rect(0 0 0 0);
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	display: block;
-	margin: 0 -1px -1px 0;
-	overflow: hidden;
-	padding: 0;
-}
-</style>
+<script setup lang="ts">
+useHead({
+	title: 'Receitas de Crochê',
+	titleTemplate: '%s - Receitas de Crochê para Vestuário, Amigurumi e Datas Comemorativas'
+})
+</script>

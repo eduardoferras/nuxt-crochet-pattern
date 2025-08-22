@@ -5,6 +5,11 @@ export default defineNuxtConfig({
 	nitro: {
 		preset: process.env.NITRO_PRESET
 	},
+	runtimeConfig: {
+		public: {
+			WHATSAPP_SALES: ''
+		}
+	},
 	devtools: { enabled: true },
 	modules: [
 		'@nuxt/image',
