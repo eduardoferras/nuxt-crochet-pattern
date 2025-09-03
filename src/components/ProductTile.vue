@@ -48,7 +48,7 @@
 import products from '@/utils/data/products'
 import AppImage from './AppImage.vue'
 const config = useRuntimeConfig()
-const whatsAppSales = config.public.WHATSAPP_SALES
+const whatsAppSales = config.public.whatsAppSales
 </script>
 
 <style lang="scss" scoped>
