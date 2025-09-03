@@ -13,7 +13,14 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			whatsAppSales: '',
-			gtmId: ''
+			gtm: {
+				id: process.env.NUXT_PUBLIC_GTM_ID as string,
+				enabled: process.env.NODE_ENV === 'production',
+				loadScript: true,
+				enableRouterSync: true,
+				defer: true,
+				debug: process.env.NODE_ENV !== 'production'
+			}
 		}
 	},
 	devtools: { enabled: true },
@@ -55,13 +62,5 @@ export default defineNuxtConfig({
 	},
 	alias: {
 		'@components': fileURLToPath(new URL('./src/components', import.meta.url))
-	},
-	gtm: {
-		id: process.env.GTM_ID as string,
-		enabled: process.env.NODE_ENV === 'production',
-		loadScript: true,
-		enableRouterSync: true,
-		defer: true,
-		debug: process.env.NODE_ENV !== 'production'
 	}
 })
