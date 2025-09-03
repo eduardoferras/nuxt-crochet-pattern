@@ -12,7 +12,8 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {
-			WHATSAPP_SALES: ''
+			WHATSAPP_SALES: '',
+			gtmId: ''
 		}
 	},
 	devtools: { enabled: true },
@@ -22,7 +23,8 @@ export default defineNuxtConfig({
 		'@nuxt/eslint',
 		'@nuxt/test-utils/module',
 		'@nuxtjs/fontaine',
-		'@nuxtjs/google-fonts'
+		'@nuxtjs/google-fonts',
+		'@zadigetvoltaire/nuxt-gtm'
 	],
 	googleFonts: {
 		families: {
@@ -53,5 +55,13 @@ export default defineNuxtConfig({
 	},
 	alias: {
 		'@components': fileURLToPath(new URL('./src/components', import.meta.url))
+	},
+	gtm: {
+		id: process.env.GTM_ID as string,
+		enabled: process.env.NODE_ENV === 'production',
+		loadScript: true,
+		enableRouterSync: true,
+		defer: true,
+		debug: process.env.NODE_ENV !== 'production'
 	}
 })
