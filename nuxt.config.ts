@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {
-			WHATSAPP_SALES: '',
+			whatsAppSales: '',
 			gtmId: ''
 		}
 	},
