@@ -8,7 +8,8 @@ services:
     volumes:
       - ../../:/home/node/app:cached
     ports:
-      - 3000:3000
+      - 3000:3000 # dev
+      - 3001:3001 # preview
     command: ['sh', '-c', 'npm i && npm run dev']
     tty: true
     stdin_open: true
