@@ -26,17 +26,10 @@
 						</div>
 					</div>
 					<div class="product-card__actions">
-						<AppLink
-							:to="`https://wa.me/${whatsAppSales}?text=${encodeURIComponent(
-								`Olá, gostaria de saber mais sobre o produto ${product.name}`
-							)}`"
-							target="_blank"
-							class="btn btn--whatsapp"
-						>
-							<Icon name="mdi:whatsapp" color="white" size="20" />
-
+						<button class="btn btn--whatsapp" @click="handleWhatsAppClick(product)">
+							<Icon name="mdi:whatsapp" color="white" size="24" />
 							Comprar no WhatsApp
-						</AppLink>
+						</button>
 					</div>
 				</li>
 			</ul>
@@ -47,8 +40,24 @@
 <script lang="ts" setup>
 import products from '@/utils/data/products'
 import AppImage from './AppImage.vue'
+import type Product from '@/types/Product'
+
 const config = useRuntimeConfig()
 const whatsAppSales = config.public.whatsAppSales
+
+const gtm = useGtm()
+
+function handleWhatsAppClick(product: Product) {
+	gtm?.trackEvent({
+		event: 'generate_lead',
+		currency: 'BRL',
+		value: product.price
+	})
+
+	const message = encodeURIComponent(`Olá, gostaria de saber mais sobre o produto ${product.name}`)
+	const url = `https://wa.me/${whatsAppSales}?text=${message}`
+	window.open(url, '_blank')
+}
 </script>
 
 <style lang="scss" scoped>
