@@ -2,6 +2,7 @@
 	<section class="product-tile">
 		<AppContainer>
 			<h2 class="product-tile__title">Últimos Lançamentos</h2>
+			<div v-if="pending" class="product-tile__title">Carregando produtos...</div>
 			<ul class="product-list">
 				<li
 					v-for="product in products"
@@ -38,14 +39,17 @@
 </template>
 
 <script lang="ts" setup>
-import products from '@/utils/data/products'
 import AppImage from './AppImage.vue'
 import type Product from '@/types/Product'
 
 const config = useRuntimeConfig()
 const whatsAppSales = config.public.whatsAppSales
-
 const gtm = useGtm()
+
+const { data: products, pending } = await useFetch(`${config.public.apiUrl}/products`, {
+	key: 'products',
+	lazy: true
+})
 
 function handleWhatsAppClick(product: Product) {
 	gtm?.trackEvent({

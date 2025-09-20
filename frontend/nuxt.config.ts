@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {
+			apiUrl: process.env.NUXT_PUBLIC_API_URL,
 			whatsAppSales: '',
 			gtm: {
 				id: process.env.NUXT_PUBLIC_GTM_ID as string,

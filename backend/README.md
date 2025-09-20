@@ -1,3 +1,6 @@
+https://medium.com/@gabrieldrouin/node-js-2025-guide-how-to-setup-express-js-with-typescript-eslint-and-prettier-b342cd21c30d
+https://dev.to/a0viedo/nodejs-typescript-and-esm-it-doesnt-have-to-be-painful-438e
+
 <div align="center">
 <h1>Crochet Patterns</h1>
 <p>
@@ -65,20 +68,6 @@ To make it easier to run the commands, you can add the following alias to your `
 ```bash
 alias dev='./dev'
 ```
-
-## Development with devcontainer
-
-> Make sure to VS Code extension: [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-
-Reopen in Container:
-
-VS Code will detect the Dev Container and ask if you want to reopen the project inside the container. Alternatively, press Ctrl+Shift+P / Cmd+Shift+P e select:
-
-```bash
-Dev Containers: Reopen in Container
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Running Locally
 
