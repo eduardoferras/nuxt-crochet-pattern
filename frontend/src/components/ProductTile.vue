@@ -51,6 +51,8 @@ const { data: products, pending } = await useFetch(`${config.public.apiUrl}/prod
 	lazy: true
 })
 
+console.log(products)
+
 function handleWhatsAppClick(product: Product) {
 	gtm?.trackEvent({
 		event: 'generate_lead',
