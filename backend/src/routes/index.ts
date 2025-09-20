@@ -1,8 +1,10 @@
 import { Router } from "express";
 import publicProductRoutes from "@routes/public/product.routes.ts";
+import healthRoutes from "@routes/public/health.routes.ts";
 
-const router = Router()
+const router = Router();
 
-router.use('/products', publicProductRoutes)
+router.use("/health", healthRoutes);
+router.use("/products", publicProductRoutes);
 
-export default router
+export default router;
