@@ -1,6 +1,6 @@
 services:
-  app:
-    container_name: crochet-patterns
+  backend:
+    container_name: backend-crochet-patterns
     image: node:22.19.0-alpine3.22
     working_dir: /home/node/app
     environment:
@@ -8,8 +8,7 @@ services:
     volumes:
       - ../../:/home/node/app:cached
     ports:
-      - 3000:3000 # dev
-      - 3001:3001 # preview
-    command: ['sh', '-c', 'npm i && npm run dev']
+      - 3002:3002
+    command: ["sh", "-c", "npm i && npm run dev"]
     tty: true
     stdin_open: true
