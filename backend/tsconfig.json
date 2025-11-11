@@ -1,25 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "ES2023",
-    "module": "node20",
-    "lib": ["ES2023"],
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+	"compilerOptions": {
+		"target": "ES2023",
+		"module": "node20",
+		"lib": ["ES2023"],
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
 		"noEmit": true,
 		"allowImportingTsExtensions": true,
-		"baseUrl": ".",
+		"baseUrl": "./src",
 		"paths": {
-      "@/*": ["src/*"],
-			"@routes/*": ["src/routes/*"],
-			"@middlewares/*": ["src/middlewares/*"],
-			"@controllers/*": ["src/controllers/*"],
-			"@utils/*": ["src/utils/*"]
-    }
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "**/*.test.ts", "**/*.spec.ts"]
+			"@/*": ["*"],
+			"@routes/*": ["routes/*"],
+			"@middlewares/*": ["middlewares/*"],
+			"@controllers/*": ["controllers/*"],
+			"@utils/*": ["utils/*"],
+			"@jobs/*": ["jobs/*"]
+		}
+	},
+	"include": ["./src/**/*.ts", "**/*.test.ts", "**/*.spec.ts"],
+	"exclude": ["node_modules"]
 }
