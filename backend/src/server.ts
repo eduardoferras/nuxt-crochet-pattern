@@ -3,6 +3,7 @@ import path from "node:path";
 import routes from "@/routes/index.ts";
 import { fileURLToPath } from "node:url";
 import cors from "cors";
+import registerJobs from "@/jobs/index.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +17,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(routes);
+
+registerJobs();
 
 app.listen(parseInt(process.env.PORT || "3002"), "0.0.0.0", () => {
 	console.log(`Server running on port ${process.env.PORT || 3002}`);
