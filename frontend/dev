@@ -10,6 +10,7 @@ function show_help() {
   echo "  $0 start              Start the development server"
   echo "  $0 stop               Stop the development server"
   echo "  $0 enter              Enter the container shell"
+	echo "  $0 logs	              Show service logs"
   echo "  $0 ps                 List running services"
   echo "  $0 docker <command>   Run command inside the container"
   echo "  $0 <compose args>     Pass any other argument to docker compose"
@@ -35,6 +36,9 @@ case "$1" in
   enter)
     docker compose -f "$COMPOSE_FILE" exec "$SERVICE_NAME" sh
     ;;
+	logs)
+		docker compose -f "$COMPOSE_FILE" logs "$SERVICE_NAME" -f
+		;;
   ps)
     docker compose -f "$COMPOSE_FILE" ps
     ;;
