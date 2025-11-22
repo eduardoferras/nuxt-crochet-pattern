@@ -13,12 +13,16 @@
 		"allowImportingTsExtensions": true,
 		"baseUrl": "./src",
 		"paths": {
-			"@/*": ["*"],
 			"@routes/*": ["routes/*"],
 			"@middlewares/*": ["middlewares/*"],
 			"@controllers/*": ["controllers/*"],
 			"@utils/*": ["utils/*"],
-			"@jobs/*": ["jobs/*"]
+			"@jobs/*": ["jobs/*"],
+			"@queues/*": ["queues/*"],
+			"@workers/*": ["workers/*"],
+			"@config/*": ["config/*"],
+			"@services/*": ["services/*"],
+			"@/*": ["*"]
 		}
 	},
 	"include": ["./src/**/*.ts", "**/*.test.ts", "**/*.spec.ts"],
