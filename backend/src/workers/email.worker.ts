@@ -1,0 +1,31 @@
+import EmailPayload from "@/types/email.types.ts";
+import { Job, Worker } from "bullmq";
+import redisConnection from "@config/redis.ts";
+import sendEmail from "@services/mail.service.ts";
+
+const emailWorker = new Worker(
+	"emailQueue",
+	async (job: Job<EmailPayload>) => {
+		try {
+			const { to, subject, body } = job.data;
+
+			await sendEmail({
+				to,
+				subject,
+				body,
+			});
+
+			console.log(`Email sent to ${to} with subject "${subject}"`);
+		} catch (error) {
+			console.error("Error processing email job:", error);
+			throw error;
+		}
+	},
+	{
+		connection: redisConnection,
+		limiter: {
+			max: 2,
+			duration: 1000,
+		},
+	}
+);
