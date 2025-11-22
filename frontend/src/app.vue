@@ -4,6 +4,7 @@
 		<main class="App__main">
 			<NuxtPage />
 		</main>
+		<FeedbackWidget />
 		<AppFooter />
 	</div>
 </template>

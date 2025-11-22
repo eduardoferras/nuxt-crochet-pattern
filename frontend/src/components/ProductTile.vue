@@ -46,12 +46,10 @@ const config = useRuntimeConfig()
 const whatsAppSales = config.public.whatsAppSales
 const gtm = useGtm()
 
-const { data: products, pending } = await useFetch(`${config.public.apiUrl}/products`, {
+const { data: products, pending } = await useFetch(`${config.apiUrl}/products`, {
 	key: 'products',
 	lazy: true
 })
-
-console.log(products)
 
 function handleWhatsAppClick(product: Product) {
 	gtm?.trackEvent({

@@ -11,6 +11,7 @@ export default defineNuxtConfig({
 		preset: process.env.NITRO_PRESET
 	},
 	runtimeConfig: {
+		apiUrl: process.env.API_URL,
 		public: {
 			apiUrl: process.env.NUXT_PUBLIC_API_URL,
 			whatsAppSales: '',
@@ -32,7 +33,9 @@ export default defineNuxtConfig({
 		'@nuxt/test-utils/module',
 		'@nuxtjs/fontaine',
 		'@nuxtjs/google-fonts',
-		'@zadigetvoltaire/nuxt-gtm'
+		'@zadigetvoltaire/nuxt-gtm',
+		'@pinia/nuxt',
+		'@vee-validate/nuxt'
 	],
 	googleFonts: {
 		families: {
@@ -49,19 +52,21 @@ export default defineNuxtConfig({
 		}
 	},
 	srcDir: 'src/',
-	css: ['@/assets/styles/main.scss'],
+	css: ['@/styles/main.scss'],
 	vite: {
 		css: {
 			preprocessorOptions: {
 				scss: {
 					additionalData: `
-            @use "@/assets/styles/abstracts/index" as *;
+            @use "@/styles/abstracts/index" as *;
           `
 				}
 			}
 		}
 	},
 	alias: {
-		'@components': fileURLToPath(new URL('./src/components', import.meta.url))
+		'@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+		'@composables': fileURLToPath(new URL('./src/composables', import.meta.url)),
+		'@schemas': fileURLToPath(new URL('./src/schemas', import.meta.url))
 	}
 })
