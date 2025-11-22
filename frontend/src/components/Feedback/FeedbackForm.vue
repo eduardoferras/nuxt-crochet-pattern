@@ -8,6 +8,7 @@
 			:placeholder="steps[currentStep]?.placeholder || ''"
 			rows="5"
 			:class="{ 'field-error': errors.feedback }"
+			autofocus
 		></textarea>
 		<span class="error">{{ errors.feedback }}</span>
 		<button class="btn btn--submit" type="submit" :disabled="!meta.valid">
@@ -61,7 +62,8 @@ const onSubmit = handleSubmit(async ({ feedback }: FeedbackForm) => {
 		flex-direction: column;
 		gap: 1.6rem;
 
-		.field-error {
+		.field-error,
+		.field-error:focus {
 			border: 2px solid #d32f2f;
 		}
 
@@ -86,6 +88,10 @@ const onSubmit = handleSubmit(async ({ feedback }: FeedbackForm) => {
 		outline: none;
 		scrollbar-width: thin;
 		scrollbar-color: #ff7f00 transparent;
+
+		&:focus {
+			border: 2px solid #ff7f00;
+		}
 	}
 }
 </style>
