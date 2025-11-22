@@ -11,9 +11,9 @@
 				<h2 class="feedback-title">
 					{{ steps[currentStep]?.title || 'Deixe seu feedback' }}
 				</h2>
-				<div class="feedback-icon-wrapper">
+				<button class="feedback-icon-wrapper" type="button">
 					<Icon name="material-symbols:close" size="24" @click="reset" />
-				</div>
+				</button>
 			</div>
 			<template v-if="currentStep < 0">
 				<FeedbackOption />
