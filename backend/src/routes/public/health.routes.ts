@@ -1,7 +1,21 @@
+import redisConnection from "@config/redis.ts";
 import { Router } from "express";
 
 const router = Router();
 
-router.get("/", (req, res) => res.status(200).json({ status: "ok" }));
+router.get("/", async (_req, res) => {
+	try {
+		const redisStatus = await redisConnection.ping();
+		if (redisStatus) {
+			return res.sendStatus(200);
+		} else {
+			return res.status(500).json({ message: "Redis connection failed" });
+		}
+	} catch (error) {
+		console.error("Health check failed:", error);
+
+		return res.status(500).json({ message: "Health check failed", error });
+	}
+});
 
 export default router;
