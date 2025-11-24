@@ -88,9 +88,10 @@ const onSubmit = handleSubmit(async ({ feedback }: FeedbackForm) => {
 		outline: none;
 		scrollbar-width: thin;
 		scrollbar-color: #ff7f00 transparent;
+		border: 2px solid transparent;
 
 		&:focus {
-			border: 2px solid #ff7f00;
+			border-color: #ff7f00;
 		}
 	}
 }
