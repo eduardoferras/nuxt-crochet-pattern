@@ -5,14 +5,18 @@
 		</template>
 		<template v-else>
 			<div class="feedback-header">
-				<div class="feedback-icon-wrapper" :class="{ 'visibility-hidden': currentStep < 0 }">
-					<Icon name="ep:back" size="24" @click="resetStep" />
-				</div>
+				<button
+					class="feedback-icon-wrapper"
+					:class="{ 'visibility-hidden': currentStep < 0 }"
+					@mousedown.prevent="resetStep"
+				>
+					<Icon name="ep:back" size="24" />
+				</button>
 				<h2 class="feedback-title">
 					{{ steps[currentStep]?.title || 'Deixe seu feedback' }}
 				</h2>
-				<button class="feedback-icon-wrapper" type="button">
-					<Icon name="material-symbols:close" size="24" @click="reset" />
+				<button class="feedback-icon-wrapper" @mousedown.prevent="reset">
+					<Icon name="material-symbols:close" size="24" />
 				</button>
 			</div>
 			<template v-if="currentStep < 0">
