@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "ES2023",
+		"module": "node20",
+		"lib": ["ES2023"],
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+		"baseUrl": "./src",
+		"paths": {
+			"@routes/*": ["routes/*"],
+			"@middlewares/*": ["middlewares/*"],
+			"@controllers/*": ["controllers/*"],
+			"@utils/*": ["utils/*"],
+			"@jobs/*": ["jobs/*"],
+			"@queues/*": ["queues/*"],
+			"@workers/*": ["workers/*"],
+			"@config/*": ["config/*"],
+			"@services/*": ["services/*"],
+			"@/*": ["*"]
+		}
+	},
+	"include": ["./src/**/*.ts", "**/*.test.ts", "**/*.spec.ts"],
+	"exclude": ["node_modules"]
+}
