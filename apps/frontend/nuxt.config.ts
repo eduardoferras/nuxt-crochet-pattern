@@ -11,7 +11,6 @@ export default defineNuxtConfig({
 		preset: process.env.NITRO_PRESET
 	},
 	runtimeConfig: {
-		apiUrl: process.env.API_URL,
 		public: {
 			apiUrl: process.env.NUXT_PUBLIC_API_URL,
 			whatsAppSales: '',
