@@ -46,7 +46,7 @@ const config = useRuntimeConfig()
 const whatsAppSales = config.public.whatsAppSales
 const gtm = useGtm()
 
-const { data: products, pending } = await useFetch(`${config.public.apiUrl}/products`, {
+const { data: products, pending } = await useFetch<Product[]>(`${config.public.apiUrl}/products`, {
 	key: 'products',
 	lazy: true
 })
