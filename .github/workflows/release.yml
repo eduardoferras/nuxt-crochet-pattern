@@ -27,6 +27,6 @@ jobs:
         uses: changesets/action@v1
         with:
           version: npm run version
-          title: "chore(root): version packages"
+          title: "chore(root): version apps"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
