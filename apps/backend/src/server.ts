@@ -1,5 +1,7 @@
 import app from "@/app.ts";
 
-app.listen(parseInt(process.env.PORT || "3002"), "0.0.0.0", () => {
+const port = Number(process.env.PORT) || 3002;
+
+app.listen(port, "0.0.0.0", () => {
 	console.log(`Server running on port ${process.env.PORT || 3002}`);
 });
