@@ -21,7 +21,7 @@ export async function addFeedbackJob(feedback: string) {
 				},
 				removeOnComplete: true,
 				removeOnFail: false,
-			}
+			},
 		);
 	} catch (error) {
 		console.error("Error adding feedback job:", error);

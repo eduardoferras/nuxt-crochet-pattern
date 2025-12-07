@@ -1,5 +1,5 @@
-import EmailPayload from "@/types/email.types.ts";
 import { Resend } from "resend";
+import type EmailPayload from "@/types/email.types.ts";
 export default async function sendEmail({ to, subject, body }: EmailPayload) {
 	try {
 		const resend = new Resend(process.env.RESEND_API_KEY!);

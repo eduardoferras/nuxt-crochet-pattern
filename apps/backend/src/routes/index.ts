@@ -1,7 +1,7 @@
-import { Router } from "express";
-import publicProductRoutes from "@routes/public/product.routes.ts";
-import healthRoutes from "@routes/public/health.routes.ts";
 import publicFeedbackRoutes from "@routes/public/feedback.routes.ts";
+import healthRoutes from "@routes/public/health.routes.ts";
+import publicProductRoutes from "@routes/public/product.routes.ts";
+import { Router } from "express";
 
 const router = Router();
 

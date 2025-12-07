@@ -1,9 +1,9 @@
-import EmailPayload from "@/types/email.types.ts";
-import { Job, Worker } from "bullmq";
 import redisConnection from "@config/redis.ts";
 import sendEmail from "@services/mail.service.ts";
+import { type Job, Worker } from "bullmq";
+import type EmailPayload from "@/types/email.types.ts";
 
-const emailWorker = new Worker(
+new Worker(
 	"emailQueue",
 	async (job: Job<EmailPayload>) => {
 		try {
@@ -27,5 +27,5 @@ const emailWorker = new Worker(
 			max: 2,
 			duration: 1000,
 		},
-	}
+	},
 );
