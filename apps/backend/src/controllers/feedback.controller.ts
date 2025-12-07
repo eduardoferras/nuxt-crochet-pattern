@@ -1,5 +1,5 @@
 import { addFeedbackJob } from "@jobs/feedback.job.ts";
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 
 export const sendFeedback = async (req: Request, res: Response) => {
 	try {

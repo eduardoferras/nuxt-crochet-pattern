@@ -1,4 +1,4 @@
-import Product from "@/types/product.types.ts";
+import type Product from "@/types/product.types.ts";
 
 const products: Product[] = [
 	{

@@ -1,9 +1,9 @@
-import express, { Application } from "express";
 import path from "node:path";
-import routes from "@/routes/index.ts";
 import { fileURLToPath } from "node:url";
 import cors from "cors";
+import express, { type Application } from "express";
 import registerJobs from "@/jobs/index.ts";
+import routes from "@/routes/index.ts";
 import "@/workers";
 
 const __filename = fileURLToPath(import.meta.url);
