@@ -7,7 +7,8 @@
 	],
 	"scripts": {
 		"changeset": "changeset",
-		"version": "changeset version"
+		"version": "changeset version",
+		"lint": "npm run lint --workspaces"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.7"
