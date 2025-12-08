@@ -14,4 +14,4 @@ services:
     tty: true
     stdin_open: true
     extra_hosts:
-      - "localhost:host-gateway"
+      - 'localhost:host-gateway'
