@@ -1,0 +1,31 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    container:
+      image: node:22-slim
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run test across workspaces
+        run: npm run test
