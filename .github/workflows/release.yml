@@ -9,12 +9,18 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
-    container: node:22-bullseye
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
 
       - name: Install dependencies
         run: npm i
@@ -28,5 +34,6 @@ jobs:
         with:
           version: npm run version
           title: "chore(root): version apps"
+          cwd: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
