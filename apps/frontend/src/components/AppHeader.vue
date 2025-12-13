@@ -12,12 +12,10 @@
 						color="#683000"
 					/>
 				</AppLink>
+				<!-- prettier-ignore -->
 				<p class="header__text">
-					Receitas de Crochê para
-					<strong>Vestuário</strong>
-					,
-					<strong>Amigurumi</strong>
-					e
+					Receitas de Crochê para <strong>Vestuário</strong>,
+					<strong>Amigurumi</strong> e
 					<strong>Datas Comemorativas</strong>
 				</p>
 			</div>
