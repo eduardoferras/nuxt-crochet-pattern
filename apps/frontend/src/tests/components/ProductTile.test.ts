@@ -1,32 +1,13 @@
-import { describe, expect, it, vi } from 'vitest'
-import { mountSuspended } from '@nuxt/test-utils/runtime'
-import ProductTile from '@/components/ProductTile.vue'
-import type Product from '@/types/Product'
+import { describe, expect, it } from 'vitest'
+import { mockNuxtImport, mountSuspended } from '@nuxt/test-utils/runtime'
+import ProductTile from '@components/ProductTile.vue'
+import mockProducts from '@/tests/mocks/products.mock'
 
-const mockProducts: Product[] = vi.hoisted(() => [
-	{
-		id: 1,
-		name: 'Product 1',
-		price: 44.9993,
-		image: 'https://example.com/product1.jpg',
-		seller: {
-			name: 'Fulano'
-		}
-	},
-	{
-		id: 2,
-		name: 'Product 2',
-		price: 55.99,
-		image: 'https://example.com/product2.jpg',
-		seller: {
-			name: 'Fulano'
-		}
-	}
-])
-
-vi.mock('@/utils/data/products', () => ({
-	default: mockProducts
-}))
+mockNuxtImport('useFetch', () => {
+	return async () => ({
+		data: mockProducts
+	})
+})
 
 describe('ProductTile', () => {
 	it('should render products correctly', async () => {
