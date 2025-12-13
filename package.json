@@ -9,7 +9,9 @@
 		"changeset": "changeset",
 		"version": "changeset version",
 		"lint": "npm run lint --workspaces",
-		"test": "npm run test --workspaces"
+		"test": "npm run test --workspaces",
+		"canary:enter": "changeset pre enter canary",
+		"canary:exit": "changeset pre exit"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.7"
