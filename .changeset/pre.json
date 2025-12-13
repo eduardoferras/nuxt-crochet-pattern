@@ -1,0 +1,13 @@
+{
+  "mode": "pre",
+  "tag": "canary",
+  "initialVersions": {
+    "crochet-pattern-api": "1.0.0",
+    "crochet-pattern-frontend": "1.0.0"
+  },
+  "changesets": [
+    "big-flies-beam",
+    "many-donkeys-ask",
+    "salty-dogs-smell"
+  ]
+}
