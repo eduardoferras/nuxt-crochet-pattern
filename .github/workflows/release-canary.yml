@@ -12,13 +12,17 @@ jobs:
   release:
     name: release canary
     runs-on: ubuntu-latest
-    container: node:22-bullseye
     permissions:
       contents: write
       pull-requests: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
 
       - name: Install dependencies
         run: npm i
@@ -27,15 +31,11 @@ jobs:
         continue-on-error: true
         run: npm run canary:enter
 
-      - name: Set Git identity
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-
       - name: Create Release Pull Request
         uses: changesets/action@v1
         with:
           version: npm run version
           title: "chore(root): version apps"
+          cwd: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
