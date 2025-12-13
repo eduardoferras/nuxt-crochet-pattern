@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+  workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -25,6 +26,11 @@ jobs:
       - name: Enter prelease mode
         continue-on-error: true
         run: npm run canary:enter
+
+      - name: Set Git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
