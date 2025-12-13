@@ -11,7 +11,7 @@ jobs:
   release:
     name: release canary
     runs-on: ubuntu-latest
-    container: node:22
+    container: node:22-bullseye
     permissions:
       contents: write
       pull-requests: write
@@ -23,6 +23,7 @@ jobs:
         run: npm i
 
       - name: Enter prelease mode
+        continue-on-error: true
         run: npm run canary:enter
 
       - name: Create Release Pull Request
