@@ -1,7 +1,17 @@
 {
 	"extends": "//",
 	"files": {
-		"includes": ["!!**/dist", "!!**/public", "!!**/node_modules"]
+		"includes": [
+			"!!**/dist",
+			"!!**/assets",
+			"!!**/node_modules",
+			"!!**/.expo",
+			"!!**/web-build",
+			"!!**/ios",
+			"!!**/android",
+			"!!**/*.tsbuildinfo",
+			"!!**/*.log"
+		]
 	},
 	"linter": {
 		"rules": {
