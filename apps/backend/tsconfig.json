@@ -22,6 +22,7 @@
 			"@workers/*": ["workers/*"],
 			"@config/*": ["config/*"],
 			"@services/*": ["services/*"],
+			"@schemas/*": ["schemas/*"],
 			"@/*": ["*"]
 		}
 	},
