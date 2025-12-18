@@ -11,7 +11,6 @@
 
 [Technologies](#technologies) •
 [Docker](#-development-with-docker) •
-[devcontainer](#development-with-devcontainer) •
 [Running Locally](#running-locally)
 
 </div>
