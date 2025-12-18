@@ -1,0 +1,23 @@
+{
+	"extends": "//",
+	"files": {
+		"includes": [
+			"!!**/dist",
+			"!!**/assets",
+			"!!**/node_modules",
+			"!!**/.expo",
+			"!!**/web-build",
+			"!!**/ios",
+			"!!**/android",
+			"!!**/*.tsbuildinfo",
+			"!!**/*.log"
+		]
+	},
+	"linter": {
+		"rules": {
+			"security": {
+				"noDangerouslySetInnerHtml": "warn"
+			}
+		}
+	}
+}
