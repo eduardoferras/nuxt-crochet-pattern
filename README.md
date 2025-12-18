@@ -11,32 +11,38 @@
 
 [Technologies](#technologies) •
 [Docker](#-development-with-docker) •
-[devcontainer](#development-with-devcontainer) •
 [Running Locally](#running-locally)
 
 </div>
 
 ## Technologies
 
-- [Nuxt](https://nuxt.com) - Vue Framework
-- [Vue](https://vuejs.org)
-- [Typescript](https://www.typescriptlang.org/)
-- [Sass](https://sass-lang.com/) - Styles
-- [Vitest](https://vitest.dev) - Test
-- [ESlint](https://eslint.org/) - Linter
-- [Prettier](https://prettier.io/) - Code Formatter
+### Web
+
+- Nuxt - Vue Framework
+- Typescript
+- Sass - Styles
+- Vitest - Test
+- ESlint - Linter
+- Prettier - Code Formatter
+
+### API
+- Express.js - Nodejs Framework
+- Typescript
+- Biome - Linter and Formatter
+- Vitest - Test
+- BullMQ - Queues
+- Redis
+
+### Mobile
+- Expo - React Native Framework
+- Typescript
+- Biome - Linter and Formatter
+
 
 ## 💻 Development with [Docker](https://docs.docker.com/engine/install/)
 
 `./dev` allows you to quickly run a development server and execute commands inside Docker container.
-
-#### Set environment variables
-
-Before running the project, you need to configure your environment variables. To do this, create a `.env` file based on the provided example:
-
-```bash
-cp .env.example .env
-```
 
 #### Start the development server
 

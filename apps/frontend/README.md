@@ -2,7 +2,7 @@
 <h1>Crochet Patterns</h1>
 <p>
 	<strong>
-		Marketplace of Crochet Patterns for Clothing, Amigurumi and Special Dates.
+		Digital Catalog of Crochet Patterns for Clothing, Amigurumi, and Special Dates.
 	</strong>
 </p>
 <h4 align="center">
@@ -26,17 +26,17 @@
 - [ESlint](https://eslint.org/) - Linter
 - [Prettier](https://prettier.io/) - Code Formatter
 
-## 💻 Development with [Docker](https://docs.docker.com/engine/install/)
-
-`./dev` allows you to quickly run a development server and execute commands inside Docker container.
-
-#### Set environment variables
+### Set environment variables
 
 Before running the project, you need to configure your environment variables. To do this, create a `.env` file based on the provided example:
 
 ```bash
 cp .env.example .env
 ```
+
+## 💻 Development with [Docker](https://docs.docker.com/engine/install/)
+
+`./dev` allows you to quickly run a development server and execute commands inside Docker container.
 
 #### Start the development server
 
