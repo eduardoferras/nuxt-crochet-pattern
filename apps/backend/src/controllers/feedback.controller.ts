@@ -1,9 +1,10 @@
 import { addFeedbackJob } from "@jobs/feedback.job.ts";
+import type { FeedbackSchema } from "@schemas/feedback.schema.ts";
 import type { Request, Response } from "express";
 
 export const sendFeedback = async (req: Request, res: Response) => {
 	try {
-		const { feedback } = req.body;
+		const { feedback }: FeedbackSchema = req.body;
 
 		if (!feedback || feedback.trim() === "") {
 			return res.status(400).json({ message: "Feedback is required" });
