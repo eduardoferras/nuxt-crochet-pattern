@@ -2,7 +2,7 @@
 <h1>Crochet Patterns</h1>
 <p>
 	<strong>
-		Marketplace of Crochet Patterns for Clothing, Amigurumi and Special Dates.
+		Digital Catalog of Crochet Patterns for Clothing, Amigurumi, and Special Dates.
 	</strong>
 </p>
 <h4 align="center">
