@@ -1,11 +1,8 @@
-https://medium.com/@gabrieldrouin/node-js-2025-guide-how-to-setup-express-js-with-typescript-eslint-and-prettier-b342cd21c30d
-https://dev.to/a0viedo/nodejs-typescript-and-esm-it-doesnt-have-to-be-painful-438e
-
 <div align="center">
 <h1>Crochet Patterns</h1>
 <p>
 	<strong>
-		Marketplace of Crochet Patterns for Clothing, Amigurumi and Special Dates.
+		Digital Catalog of Crochet Patterns for Clothing, Amigurumi, and Special Dates.
 	</strong>
 </p>
 <h4 align="center">
