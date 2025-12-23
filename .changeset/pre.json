@@ -3,10 +3,13 @@
   "tag": "canary",
   "initialVersions": {
     "crochet-pattern-api": "1.0.0",
-    "crochet-pattern-frontend": "1.0.0"
+    "crochet-pattern-frontend": "1.0.0",
+    "mobile": "0.0.1"
   },
   "changesets": [
+    "afraid-glasses-agree",
     "big-flies-beam",
+    "chatty-bananas-push",
     "many-donkeys-ask",
     "salty-dogs-smell"
   ]
