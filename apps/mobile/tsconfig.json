@@ -4,7 +4,11 @@
 		"strict": true,
 		"baseUrl": "src",
 		"paths": {
+			"@app/*": ["app/*"],
 			"@components/*": ["components/*"],
+			"@interfaces/*": ["interfaces/*"],
+			"@hooks/*": ["hooks/*"],
+			"@services/*": ["services/*"],
 			"@/*": ["./*"]
 		}
 	},

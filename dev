@@ -7,14 +7,14 @@ SERVICE_NAME="backend"
 function show_help() {
   echo
   echo "Usage:"
-	echo
-  echo "  $0 start              				Start the development server"
-  echo "  $0 stop               				Stop the development server"
-	echo "  $0 restart <service>           			Restart the development server"
-  echo "  $0 enter <service>    				Enter the container shell (backend, app, postgres...)"
-	echo "  $0 logs  <service>    				Show service logs (backend, app, postgres...)"
-  echo "  $0 ps                 				List running services"
-  echo "  $0 docker <service> <command> 			Run command inside the container"
+  echo
+  echo "  $0 start [service]                Start the development server (all or specific service)"
+  echo "  $0 stop                           Stop the development server"
+  echo "  $0 restart <service>              Restart the development server"
+  echo "  $0 enter <service>                Enter the container shell (backend, app, postgres...)"
+  echo "  $0 logs  <service>                Show service logs (backend, app, postgres...)"
+  echo "  $0 ps                             List running services"
+  echo "  $0 docker <service> <command>     Run command inside the container"
   echo
   exit 0
 }
@@ -28,20 +28,24 @@ case "$1" in
     show_help
     ;;
   start)
-    docker compose -f "$COMPOSE_FILE" up -d --build
+    if [[ $# -ge 2 ]]; then
+      docker compose -f "$COMPOSE_FILE" up -d --build "$2"
+    else
+      docker compose -f "$COMPOSE_FILE" up -d --build
+    fi
     ;;
   stop)
     docker compose -f "$COMPOSE_FILE" down
     ;;
-	restart)
-		docker compose -f "$COMPOSE_FILE" restart ${2:-$SERVICE_NAME}
-	;;
+  restart)
+    docker compose -f "$COMPOSE_FILE" restart ${2:-$SERVICE_NAME}
+    ;;
   enter)
-		docker compose -f "$COMPOSE_FILE" exec ${2:-$SERVICE_NAME} sh
-		;;
-	logs)
-		docker compose -f "$COMPOSE_FILE" logs ${2:-$SERVICE_NAME} -f
-		;;
+    docker compose -f "$COMPOSE_FILE" exec ${2:-$SERVICE_NAME} sh
+    ;;
+  logs)
+    docker compose -f "$COMPOSE_FILE" logs ${2:-$SERVICE_NAME} -f
+    ;;
   ps)
     docker compose -f "$COMPOSE_FILE" ps
     ;;
