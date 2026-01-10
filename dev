@@ -1,22 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-COMPOSE_FILE="docker/development/docker-compose.yaml"
-SERVICE_NAME="backend"
-
 function show_help() {
-  echo
-  echo "Usage:"
-  echo
-  echo "  $0 start [service]                Start the development server (all or specific service)"
-  echo "  $0 stop                           Stop the development server"
-  echo "  $0 restart <service>              Restart the development server"
-  echo "  $0 enter <service>                Enter the container shell (backend, app, postgres...)"
-  echo "  $0 logs  <service>                Show service logs (backend, app, postgres...)"
-  echo "  $0 ps                             List running services"
-  echo "  $0 docker <service> <command>     Run command inside the container"
-  echo
-  exit 0
+	echo
+	echo	"Usage:"
+	echo
+	echo " $0 start                        Start the development server"
+	echo " $0 stop                         Stop the development server"
+	echo " $0 restart <service>            Restart the development server"
+	echo " $0 enter   <service>            Enter the container shell (backend, app, postgresql...)"
+	echo " $0 logs    <service>            Show service logs (backend, app, postgresql...)"
+	echo " $0 ps                           List running services"
+	echo " $0 docker  <service> <command>  Run command inside the container"
+	echo
+	exit 0
 }
 
 if [[ $# -eq 0 ]]; then
@@ -28,29 +25,25 @@ case "$1" in
     show_help
     ;;
   start)
-    if [[ $# -ge 2 ]]; then
-      docker compose -f "$COMPOSE_FILE" up -d --build "$2"
-    else
-      docker compose -f "$COMPOSE_FILE" up -d --build
-    fi
+    docker compose up -d --build
     ;;
   stop)
-    docker compose -f "$COMPOSE_FILE" down
+    docker compose down
     ;;
-  restart)
-    docker compose -f "$COMPOSE_FILE" restart ${2:-$SERVICE_NAME}
-    ;;
+	restart)
+		docker compose restart ${2:-$SERVICE_NAME}
+	;;
   enter)
-    docker compose -f "$COMPOSE_FILE" exec ${2:-$SERVICE_NAME} sh
-    ;;
-  logs)
-    docker compose -f "$COMPOSE_FILE" logs ${2:-$SERVICE_NAME} -f
-    ;;
+		docker compose exec ${2:-$SERVICE_NAME} sh
+		;;
+	logs)
+		docker compose logs ${2:-$SERVICE_NAME} -f
+		;;
   ps)
-    docker compose -f "$COMPOSE_FILE" ps
+    docker compose ps
     ;;
   docker)
-    shift 2
-    docker compose -f "$COMPOSE_FILE" exec ${2:-$SERVICE_NAME} "$@"
+    shift 1
+    docker compose exec ${1:-$SERVICE_NAME} "${@:2}"
     ;;
 esac
