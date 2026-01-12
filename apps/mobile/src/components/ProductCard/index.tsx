@@ -10,11 +10,17 @@ export default function ProductCard() {
 	const numColumns = useNumColumns();
 	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		fetchProducts()
 			.then(setProducts)
-			.catch((err) => console.error(err))
+			.catch((err) => {
+				console.error("Error fetching products:", err);
+				setError(
+					"Não foi possível carregar os produtos. Tente novamente mais tarde.",
+				);
+			})
 			.finally(() => setLoading(false));
 	}, []);
 
@@ -24,6 +30,15 @@ export default function ProductCard() {
 				<Text style={S.title}>Últimos Lançamentos</Text>
 				<SpinnerLoading />
 				<Text>Carregando produtos...</Text>
+			</View>
+		);
+	}
+
+	if (error) {
+		return (
+			<View>
+				<Text style={S.title}>Últimos Lançamentos</Text>
+				<Text style={{ color: "red", marginVertical: 8 }}>{error}</Text>
 			</View>
 		);
 	}
