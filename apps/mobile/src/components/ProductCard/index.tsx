@@ -27,7 +27,7 @@ export default function ProductCard() {
 	if (loading) {
 		return (
 			<View>
-				<Text style={S.title}>Últimos Lançamentos</Text>
+				<HeaderTitle />
 				<SpinnerLoading />
 				<Text>Carregando produtos...</Text>
 			</View>
@@ -37,7 +37,7 @@ export default function ProductCard() {
 	if (error) {
 		return (
 			<View>
-				<Text style={S.title}>Últimos Lançamentos</Text>
+				<HeaderTitle />
 				<Text style={{ color: "red", marginVertical: 8 }}>{error}</Text>
 			</View>
 		);
@@ -50,27 +50,40 @@ export default function ProductCard() {
 			keyExtractor={(item) => item.id.toString()}
 			numColumns={numColumns}
 			columnWrapperStyle={numColumns > 1 ? { gap: 12 } : undefined}
-			ListHeaderComponent={<Text style={S.title}>Últimos Lançamentos</Text>}
+			ListHeaderComponent={HeaderTitle}
 			showsVerticalScrollIndicator={false}
-			ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+			ItemSeparatorComponent={ItemSeparator}
+			ListEmptyComponent={ListEmptyComponent}
 			style={{ marginBottom: 12 }}
-			renderItem={({ item }) => (
-				<View style={[S.card, { maxWidth: `${100 / numColumns}%` }]}>
-					<Image
-						source={{ uri: item.image }}
-						style={S.cardImage}
-						accessibilityLabel={`Imagem do produto ${item.name}`}
-					/>
-					<View style={S.product}>
-						<Text style={S.productTitle}>{item.name}</Text>
-						<Text style={S.productSeller}>por {item.seller.name}</Text>
-						<Text style={S.productPrice}>
-							R$ {item.price.toFixed(2).replace(".", ",")}
-						</Text>
-						<Text style={S.productBadge}>produto digital</Text>
-					</View>
-				</View>
-			)}
+			renderItem={renderProductItem(numColumns)}
 		/>
 	);
 }
+
+const ItemSeparator = () => <View style={{ height: 12 }} />;
+
+const ListEmptyComponent = () => (
+	<Text>Nenhum produto disponível no momento.</Text>
+);
+
+const HeaderTitle = () => <Text style={S.title}>Últimos Lançamentos</Text>;
+
+const renderProductItem =
+	(numColumns: number) =>
+	({ item }: { item: Product }) => (
+		<View style={[S.card, { maxWidth: `${100 / numColumns}%` }]}>
+			<Image
+				source={{ uri: item.image }}
+				style={S.cardImage}
+				accessibilityLabel={`Imagem do produto ${item.name}`}
+			/>
+			<View style={S.product}>
+				<Text style={S.productTitle}>{item.name}</Text>
+				<Text style={S.productSeller}>por {item.seller.name}</Text>
+				<Text style={S.productPrice}>
+					R$ {item.price.toFixed(2).replace(".", ",")}
+				</Text>
+				<Text style={S.productBadge}>produto digital</Text>
+			</View>
+		</View>
+	);
