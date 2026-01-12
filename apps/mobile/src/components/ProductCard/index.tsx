@@ -2,7 +2,7 @@ import SpinnerLoading from "@components/SpinnerLoading";
 import useNumColumns from "@hooks/useNumColumns";
 import type Product from "@interfaces/Product";
 import { fetchProducts } from "@services/api";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FlatList, Image, Text, View } from "react-native";
 import S from "./styles";
 
@@ -23,6 +23,35 @@ export default function ProductCard() {
 			})
 			.finally(() => setLoading(false));
 	}, []);
+
+	const renderProductItem = useCallback(
+		({ item }: { item: Product }) => (
+			<View
+				style={[
+					S.card,
+					{
+						flexBasis: `${100 / numColumns}%`,
+						maxWidth: `${100 / numColumns}%`,
+					},
+				]}
+			>
+				<Image
+					source={{ uri: item.image }}
+					style={S.cardImage}
+					accessibilityLabel={`Imagem do produto ${item.name}`}
+				/>
+				<View style={S.product}>
+					<Text style={S.productTitle}>{item.name}</Text>
+					<Text style={S.productSeller}>por {item.seller.name}</Text>
+					<Text style={S.productPrice}>
+						R$ {item.price.toFixed(2).replace(".", ",")}
+					</Text>
+					<Text style={S.productBadge}>produto digital</Text>
+				</View>
+			</View>
+		),
+		[numColumns],
+	);
 
 	if (loading) {
 		return (
@@ -53,7 +82,7 @@ export default function ProductCard() {
 			ListHeaderComponent={HeaderTitle}
 			showsVerticalScrollIndicator={false}
 			ListEmptyComponent={ListEmptyComponent}
-			renderItem={renderProductItem(numColumns)}
+			renderItem={renderProductItem}
 		/>
 	);
 }
@@ -63,31 +92,3 @@ const ListEmptyComponent = () => (
 );
 
 const HeaderTitle = () => <Text style={S.title}>Últimos Lançamentos</Text>;
-
-const renderProductItem =
-	(numColumns: number) =>
-	({ item }: { item: Product }) => (
-		<View
-			style={[
-				S.card,
-				{
-					flexBasis: `${100 / numColumns}%`,
-					maxWidth: `${100 / numColumns}%`,
-				},
-			]}
-		>
-			<Image
-				source={{ uri: item.image }}
-				style={S.cardImage}
-				accessibilityLabel={`Imagem do produto ${item.name}`}
-			/>
-			<View style={S.product}>
-				<Text style={S.productTitle}>{item.name}</Text>
-				<Text style={S.productSeller}>por {item.seller.name}</Text>
-				<Text style={S.productPrice}>
-					R$ {item.price.toFixed(2).replace(".", ",")}
-				</Text>
-				<Text style={S.productBadge}>produto digital</Text>
-			</View>
-		</View>
-	);
