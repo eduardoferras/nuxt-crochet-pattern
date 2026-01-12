@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
 		borderRadius: 12,
 		padding: 12,
 		gap: 12,
+		marginBottom: 12,
 	},
 	cardImage: {
 		width: "100%",
