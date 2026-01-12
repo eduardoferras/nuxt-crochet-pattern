@@ -1,6 +1,6 @@
 {
 	"name": "crochet-pattern-api",
-	"version": "1.1.0-canary.0",
+	"version": "1.1.0",
 	"private": true,
 	"main": "server.js",
 	"type": "module",
