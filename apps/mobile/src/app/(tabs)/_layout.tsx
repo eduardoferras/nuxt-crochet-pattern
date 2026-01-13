@@ -6,18 +6,20 @@ export default function TabLayout() {
 		<Tabs
 			screenOptions={{
 				tabBarActiveTintColor: "#683000",
+				tabBarInactiveTintColor: "#999",
+				tabBarLabelPosition: "below-icon",
 			}}
 		>
 			<Tabs.Screen
 				name="index"
 				options={{
-					title: "Início",
-
-					tabBarIcon: () => (
+					headerShown: false,
+					tabBarLabel: "Início",
+					tabBarIcon: ({ color }) => (
 						<MaterialCommunityIcons
 							name="home-outline"
-							size={24}
-							color="#683000"
+							size={28}
+							color={color}
 						/>
 					),
 				}}

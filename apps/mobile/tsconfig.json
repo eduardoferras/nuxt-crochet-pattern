@@ -9,6 +9,7 @@
 			"@interfaces/*": ["interfaces/*"],
 			"@hooks/*": ["hooks/*"],
 			"@services/*": ["services/*"],
+			"@assets/*": ["assets/*"],
 			"@/*": ["./*"]
 		}
 	},
