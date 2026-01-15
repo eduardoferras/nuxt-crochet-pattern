@@ -19,7 +19,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     container:
-      image: node:22-slim
+      image: node:22.22.0-slim
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
