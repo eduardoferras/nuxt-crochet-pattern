@@ -9,13 +9,13 @@ services:
       - redis
     container_name: backend-crochet-patterns
     image: node:22.22.0-alpine3.22
-    working_dir: /home/node/app
+    working_dir: /home/node/app/apps/backend
     environment:
       NODE_ENV: development
     volumes:
       - ../../:/home/node/app:cached
     ports:
       - 3002:3002
-    command: ["sh", "-c", "npm ci -w apps/backend && npm run dev -w apps/backend"]
+    command: ["sh", "-c", "npm ci && npm run dev"]
     tty: true
     stdin_open: true
