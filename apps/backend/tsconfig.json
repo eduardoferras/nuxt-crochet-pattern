@@ -23,6 +23,7 @@
 			"@config/*": ["config/*"],
 			"@services/*": ["services/*"],
 			"@schemas/*": ["schemas/*"],
+			"@db/*": ["db/*"],
 			"@/*": ["*"]
 		}
 	},
