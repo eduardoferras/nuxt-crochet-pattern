@@ -1,9 +1,9 @@
 import redisConnection from "@config/redis.ts";
 import { Router } from "express";
 
-const router = Router();
+const healthRouter = Router();
 
-router.get("/", async (_req, res) => {
+healthRouter.get("/", async (_req, res) => {
 	try {
 		const redisStatus = await redisConnection.ping();
 		if (redisStatus) {
@@ -18,4 +18,4 @@ router.get("/", async (_req, res) => {
 	}
 });
 
-export default router;
+export default healthRouter;

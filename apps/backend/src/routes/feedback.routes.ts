@@ -3,8 +3,8 @@ import validateBody from "@middlewares/validateBody.middleware.ts";
 import { feedbackZodSchema } from "@schemas/feedback.schema.ts";
 import { Router } from "express";
 
-const router = Router();
+const feedbackRouter = Router();
 
-router.post("/", validateBody(feedbackZodSchema), sendFeedback);
+feedbackRouter.post("/", validateBody(feedbackZodSchema), sendFeedback);
 
-export default router;
+export default feedbackRouter;
