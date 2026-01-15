@@ -16,6 +16,6 @@ services:
       - ../../:/home/node/app:cached
     ports:
       - 3002:3002
-    command: ["sh", "-c", "npm ci && npm run dev"]
+    command: ["sh", "-c", "npm ci -w apps/backend && npm run dev -w apps/backend"]
     tty: true
     stdin_open: true
