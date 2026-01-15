@@ -1,19 +1,4 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:recommended"],
-	"commitMessagePrefix": "chore(deps): ",
-	"commitMessageAction": "update dependency",
-	"commitMessageTopic": "{{depName}}",
-	"commitMessageExtra": "to v{{newVersion}}",
-	"packageRules": [
-		{
-			"matchUpdateTypes": ["major"],
-			"commitMessagePrefix": "⚠️ chore(deps)!: "
-		},
-		{
-			"matchUpdateTypes": ["patch"],
-			"automerge": true,
-			"automergeType": "pr"
-		}
-	]
+	"extends": ["config:recommended"]
 }
