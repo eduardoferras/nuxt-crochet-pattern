@@ -30,6 +30,7 @@
 		"@biomejs/biome": "2.3.11",
 		"@types/cors": "2.8.19",
 		"@types/express": "5.0.6",
+		"@types/pg": "8.16.0",
 		"@vitest/coverage-v8": "4.0.17",
 		"drizzle-kit": "0.31.8",
 		"tsx": "4.21.0",
