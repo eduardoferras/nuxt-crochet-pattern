@@ -1,5 +1,5 @@
 import { addFeedbackJob } from "@jobs/feedback.job.ts";
-import type { FeedbackSchema } from "@schemas/feedback.schema.ts";
+import type { FeedbackSchema } from "@validations/feedback.validation.ts";
 import type { Request, Response } from "express";
 
 export const sendFeedback = async (req: Request, res: Response) => {

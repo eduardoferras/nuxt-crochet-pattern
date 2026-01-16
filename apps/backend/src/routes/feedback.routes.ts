@@ -1,6 +1,6 @@
 import { sendFeedback } from "@controllers/feedback.controller.ts";
 import validateBody from "@middlewares/validateBody.middleware.ts";
-import { feedbackZodSchema } from "@schemas/feedback.schema.ts";
+import { feedbackZodSchema } from "@validations/feedback.validation.ts";
 import { Router } from "express";
 
 const feedbackRouter = Router();
