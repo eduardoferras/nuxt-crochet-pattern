@@ -41,7 +41,7 @@
 		"eslint-plugin-prettier": "5.5.5",
 		"happy-dom": "17.6.3",
 		"playwright-core": "1.57.0",
-		"prettier": "3.6.1",
+		"prettier": "3.8.0",
 		"sass-embedded": "1.89.2",
 		"typescript": "5.9.3",
 		"vitest": "3.2.4"
