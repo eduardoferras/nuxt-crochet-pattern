@@ -8,7 +8,7 @@ services:
     depends_on:
       - redis
     container_name: backend-crochet-patterns
-    image: node:22.19.0-alpine3.22
+    image: node:22.22.0-alpine3.22
     working_dir: /home/node/app
     environment:
       NODE_ENV: development
