@@ -19,7 +19,7 @@
 		"bullmq": "5.66.5",
 		"cors": "2.8.5",
 		"express": "5.2.1",
-		"ioredis": "5.8.2",
+		"ioredis": "5.9.2",
 		"node-cron": "4.2.1",
 		"resend": "6.5.2",
 		"tsup": "8.5.1",
