@@ -16,7 +16,8 @@
 		"lint:fix": "biome check --write .",
 		"db:generate": "drizzle-kit generate --config src/config/drizzle-kit.config.ts",
 		"db:migrate": "drizzle-kit migrate --config src/config/drizzle-kit.config.ts",
-		"db:push": "drizzle-kit push --config src/config/drizzle-kit.config.ts"
+		"db:push": "drizzle-kit push --config src/config/drizzle-kit.config.ts",
+		"db:studio": "drizzle-kit studio --config src/config/drizzle-kit.config.ts --host 0.0.0.0 --verbose"
 	},
 	"dependencies": {
 		"better-auth": "1.4.13",
