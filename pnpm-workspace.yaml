@@ -1,0 +1,11 @@
+packages:
+  - apps/*
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - esbuild
+  - msgpackr-extract
+  - sharp
+  - unrs-resolver
+
+autoInstallPeers: true
