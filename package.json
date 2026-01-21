@@ -7,7 +7,7 @@
 	],
 	"scripts": {
 		"changeset": "changeset",
-		"version": "changeset version && npm install",
+		"version": "changeset version && pnpm install",
 		"release": "changeset publish",
 		"lint": "pnpm -r run lint",
 		"test": "pnpm -r run test"
