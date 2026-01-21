@@ -9,8 +9,8 @@
 		"changeset": "changeset",
 		"version": "changeset version && npm install",
 		"release": "changeset publish",
-		"lint": "npm run lint --workspaces",
-		"test": "npm run test --workspaces"
+		"lint": "pnpm -r run lint",
+		"test": "pnpm -r run test"
 	},
 	"devDependencies": {
 		"@changesets/cli": "2.29.8"
