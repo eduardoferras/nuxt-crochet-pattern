@@ -1,19 +1,6 @@
 # dependencies
 node_modules
-pnpm-lock.yaml
-package-lock.json
-
-# testing
-/coverage
-.vitest
-
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+.pnpm-store
 
 # misc
 .DS_Store
@@ -23,19 +10,26 @@ dist
 Thumbs.db
 **/*.Identifier
 README.md
+./dev
 
-# debug
+# Logs and caches
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
+.cache
+.nuxt
+dist
+build
+coverage
 logs
 *.log
 
-# Configs locais de editores
+# editor config
 .vscode
 .idea
 *.swp
 *.swo
+*.iml
 
 # git
 .git
