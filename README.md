@@ -10,6 +10,7 @@
 </h4>
 
 [Technologies](#technologies) •
+[Environment Variables](#environment-variables) •
 [Docker](#-development-with-docker) •
 [Running Locally](#running-locally)
 
@@ -39,6 +40,17 @@
 - Typescript
 - Biome - Linter and Formatter
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your `.env` file.
+
+```bash
+# Backend
+cp apps/backend/.env.example apps/backend/.env
+
+# Web
+cp apps/frontend/.env.example apps/frontend/.env
+```
 
 ## 💻 Development with [Docker](https://docs.docker.com/engine/install/)
 
@@ -77,13 +89,13 @@ alias dev='./dev'
 Make sure to install dependencies:
 
 ```bash
-npm install
+pnpm install --frozen-lockfile
 ```
 
 Run the development server:
 
 ```bash
-npm run dev
+pnpm --filter backend --filter web dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
