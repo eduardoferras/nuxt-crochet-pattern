@@ -14,36 +14,36 @@ services:
       - db
     build:
       context: .
-      dockerfile: apps/backend/Dockerfile
     container_name: crochet-patterns-backend
     working_dir: /home/node/app/apps/backend
     environment:
       NODE_ENV: development
+      CI: true
     volumes:
       - .:/home/node/app:cached
     ports:
       - 3002:3002
       - 4983:4983
-    command: ["sh", "-c", "pnpm run dev"]
+    command: ["sh", "-c", "pnpm --filter backend install --frozen-lockfile && pnpm --filter backend dev"]
     tty: true
     stdin_open: true
 
-  app:
+  web:
     depends_on:
       - backend
     build:
       context: .
-      dockerfile: apps/frontend/Dockerfile
-    container_name: crochet-patterns-frontend
+    container_name: crochet-patterns-web
     working_dir: /home/node/app/apps/frontend
     environment:
       NODE_ENV: development
+      CI: true
     volumes:
       - .:/home/node/app:cached
     ports:
       - 3000:3000 # dev
       - 3001:3001 # preview
-    command: ["sh", "-c", "pnpm run dev"]
+    command: ["sh", "-c", "pnpm --filter web install --frozen-lockfile && pnpm --filter web cleanup && pnpm --filter web dev"]
     tty: true
     stdin_open: true
     extra_hosts:

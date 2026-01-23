@@ -6,6 +6,7 @@
 	"scripts": {
 		"build": "nuxt build",
 		"dev": "nuxt dev",
+		"cleanup": "nuxt cleanup",
 		"generate": "nuxt generate",
 		"preview": "cross-env PORT=3001 nuxt preview",
 		"postinstall": "nuxt prepare",
