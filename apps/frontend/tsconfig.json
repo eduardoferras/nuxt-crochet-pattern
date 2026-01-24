@@ -7,6 +7,7 @@
 			"@composables/*": ["composables/*"],
 			"@schemas/*": ["schemas/*"],
 			"@validations/*": ["validations/*"],
+			"@interfaces/*": ["interfaces/*"],
 			"@/*": ["*"]
 		},
 		"strict": true
