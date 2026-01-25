@@ -94,11 +94,8 @@ importers:
         specifier: 0.11.3
         version: 0.11.3(magicast@0.5.1)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))
       '@vee-validate/nuxt':
-        specifier: 4.15.1
-        version: 4.15.1(magicast@0.5.1)(vue@3.5.26(typescript@5.9.3))
-      '@vee-validate/zod':
-        specifier: 4.15.1
-        version: 4.15.1(vue@3.5.26(typescript@5.9.3))(zod@3.25.76)
+        specifier: 5.0.0-beta.0
+        version: 5.0.0-beta.0(magicast@0.5.1)(vue@3.5.26(typescript@5.9.3))
       '@vueuse/core':
         specifier: 14.1.0
         version: 14.1.0(vue@3.5.26(typescript@5.9.3))
@@ -2880,6 +2877,9 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
+
   '@stylistic/eslint-plugin@5.7.0':
     resolution: {integrity: sha512-PsSugIf9ip1H/mWKj4bi/BlEoerxXAda9ByRFsYuwsmr6af9NxJL0AaiNXs8Le7R21QR5KMiD/KdxZZ71LjAxQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -3166,13 +3166,8 @@ packages:
     peerDependencies:
       '@urql/core': ^5.0.0
 
-  '@vee-validate/nuxt@4.15.1':
-    resolution: {integrity: sha512-vy+BYUmwy7d01js8jg3qApyrE8/nJHbHvPZNYZSe+hTQEblNqyVt+MnD1incyxMCcivED8FX5w4rjxdoUn7iMQ==}
-
-  '@vee-validate/zod@4.15.1':
-    resolution: {integrity: sha512-329Z4TDBE5Vx0FdbA8S4eR9iGCFFUNGbxjpQ20ff5b5wGueScjocUIx9JHPa79LTG06RnlUR4XogQsjN4tecKA==}
-    peerDependencies:
-      zod: ^3.24.0
+  '@vee-validate/nuxt@5.0.0-beta.0':
+    resolution: {integrity: sha512-Wfhjj9IMad/0npjiIZDOuQ1b1TQNvy62UY2ZZGGpLFzcRKfFga7tK5VBlj+GsEdFN4y9ZFo/Tue+zHPQWQY60g==}
 
   '@vercel/nft@1.2.0':
     resolution: {integrity: sha512-68326CAWJmd6P1cUgUmufor5d4ocPbpLxiy9TKG6U/a4aWEx9aC+NIzaDI6GmBZVpt3+MkO3OwnQ2YcgJg12Qw==}
@@ -8116,8 +8111,8 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0.0 || ^19.0.0-rc
 
-  vee-validate@4.15.1:
-    resolution: {integrity: sha512-DkFsiTwEKau8VIxyZBGdO6tOudD+QoUBPuHj3e6QFqmbfCRj1ArmYWue9lEp6jLSWBIw4XPlDLjFIZNLdRAMSg==}
+  vee-validate@5.0.0-beta.0:
+    resolution: {integrity: sha512-uGIRnODDMM0A8Weu8AJcZFFJceUpgbSX6G4UYZgWhBc90VcXDK+v7yO16G+sj+6vU1eML11M2BH4HxwoPE62rw==}
     peerDependencies:
       vue: ^3.4.26
 
@@ -11568,6 +11563,8 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
+  '@standard-schema/utils@0.3.0': {}
+
   '@stylistic/eslint-plugin@5.7.0(eslint@9.39.2(jiti@2.6.1))':
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.2(jiti@2.6.1))
@@ -11883,21 +11880,13 @@ snapshots:
       '@urql/core': 5.2.0
       wonka: 6.3.5
 
-  '@vee-validate/nuxt@4.15.1(magicast@0.5.1)(vue@3.5.26(typescript@5.9.3))':
+  '@vee-validate/nuxt@5.0.0-beta.0(magicast@0.5.1)(vue@3.5.26(typescript@5.9.3))':
     dependencies:
       '@nuxt/kit': 3.20.2(magicast@0.5.1)
       local-pkg: 0.5.1
-      vee-validate: 4.15.1(vue@3.5.26(typescript@5.9.3))
+      vee-validate: 5.0.0-beta.0(vue@3.5.26(typescript@5.9.3))
     transitivePeerDependencies:
       - magicast
-      - vue
-
-  '@vee-validate/zod@4.15.1(vue@3.5.26(typescript@5.9.3))(zod@3.25.76)':
-    dependencies:
-      type-fest: 4.41.0
-      vee-validate: 4.15.1(vue@3.5.26(typescript@5.9.3))
-      zod: 3.25.76
-    transitivePeerDependencies:
       - vue
 
   '@vercel/nft@1.2.0(rollup@4.55.2)':
@@ -17469,8 +17458,10 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  vee-validate@4.15.1(vue@3.5.26(typescript@5.9.3)):
+  vee-validate@5.0.0-beta.0(vue@3.5.26(typescript@5.9.3)):
     dependencies:
+      '@standard-schema/spec': 1.1.0
+      '@standard-schema/utils': 0.3.0
       '@vue/devtools-api': 7.7.9
       type-fest: 4.41.0
       vue: 3.5.26(typescript@5.9.3)
