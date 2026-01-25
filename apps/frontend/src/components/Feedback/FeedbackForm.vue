@@ -25,14 +25,13 @@ import type { FeedbackForm } from '@/types/FeedbackForm'
 import useCurrentStep from '@composables/Feedback/useCurrentStep'
 import useSetStep from '@composables/Feedback/useSetStep'
 import useSteps from '@composables/Feedback/useSteps'
-import { feedbackSchema } from '@schemas/feedback'
-import { useForm } from 'vee-validate'
+import { feedbackZodSchema } from '@validations/feedback.validation'
 
 const currentStep = useCurrentStep()
 const steps = useSteps()
 const setStep = useSetStep
 const { errors, setFieldError, meta, handleSubmit, isSubmitting, defineField } = useForm({
-	validationSchema: feedbackSchema
+	validationSchema: feedbackZodSchema
 })
 const [feedback, feedbackAttrs] = defineField('feedback')
 const config = useRuntimeConfig()
