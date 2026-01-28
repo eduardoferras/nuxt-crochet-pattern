@@ -1,9 +1,9 @@
 import { env } from "@config/env.config.ts";
 import db from "@db/index.ts";
 import { betterAuth } from "better-auth";
-import { localization } from "better-auth-localization";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { jwt, openAPI } from "better-auth/plugins";
+import { localization } from "better-auth-localization";
 
 export const auth = betterAuth({
 	trustedOrigins: [env.FRONTEND_URL],
@@ -24,7 +24,7 @@ export const auth = betterAuth({
 		localization({
 			defaultLocale: "pt-BR",
 			fallbackLocale: "default",
-		})
+		}),
 	],
 	emailAndPassword: {
 		enabled: true,
