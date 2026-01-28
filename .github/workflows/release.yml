@@ -20,7 +20,6 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
           cache: true
 
       - name: Setup Node.js
@@ -36,7 +35,7 @@ jobs:
         uses: changesets/action@v1
         with:
           version: pnpm run version
-          publish: pnpm run release
+          publish: pnpm release
           title: "chore(root): version apps"
           cwd: ./
         env:
