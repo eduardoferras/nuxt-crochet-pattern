@@ -1,13 +1,14 @@
 {
 	"extends": "./.nuxt/tsconfig.json",
 	"compilerOptions": {
-		"baseUrl": ".",
+		"baseUrl": "./src",
 		"paths": {
-			"@components/*": ["src/components/*"],
-			"@composables/*": ["src/composables/*"],
-			"@schemas/*": ["src/schemas/*"],
-			"@validations/*": ["src/validations/*"],
-			"@/*": ["src/*"]
+			"@components/*": ["components/*"],
+			"@composables/*": ["composables/*"],
+			"@validations/*": ["validations/*"],
+			"@interfaces/*": ["interfaces/*"],
+			"@services/*": ["services/*"],
+			"@/*": ["*"]
 		},
 		"strict": true
 	}
