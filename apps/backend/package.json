@@ -21,6 +21,7 @@
 	},
 	"dependencies": {
 		"better-auth": "1.4.13",
+		"better-auth-localization": "2.2.3",
 		"bullmq": "5.66.5",
 		"cors": "2.8.5",
 		"drizzle-orm": "0.45.1",
