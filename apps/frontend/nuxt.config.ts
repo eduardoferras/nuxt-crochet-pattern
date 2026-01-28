@@ -34,7 +34,8 @@ export default defineNuxtConfig({
 		'@nuxtjs/google-fonts',
 		'@zadigetvoltaire/nuxt-gtm',
 		'@pinia/nuxt',
-		'@vee-validate/nuxt'
+		'@vee-validate/nuxt',
+		'vue-sonner/nuxt'
 	],
 	googleFonts: {
 		families: {
@@ -66,8 +67,8 @@ export default defineNuxtConfig({
 	alias: {
 		'@components': fileURLToPath(new URL('./src/components', import.meta.url)),
 		'@composables': fileURLToPath(new URL('./src/composables', import.meta.url)),
-		'@schemas': fileURLToPath(new URL('./src/schemas', import.meta.url)),
 		'@validations': fileURLToPath(new URL('./src/validations', import.meta.url)),
-		'@interfaces': fileURLToPath(new URL('./src/interfaces', import.meta.url))
+		'@interfaces': fileURLToPath(new URL('./src/interfaces', import.meta.url)),
+		'@services': fileURLToPath(new URL('./src/services', import.meta.url))
 	}
 })

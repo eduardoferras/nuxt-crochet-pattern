@@ -5,9 +5,9 @@
 		"paths": {
 			"@components/*": ["components/*"],
 			"@composables/*": ["composables/*"],
-			"@schemas/*": ["schemas/*"],
 			"@validations/*": ["validations/*"],
 			"@interfaces/*": ["interfaces/*"],
+			"@services/*": ["services/*"],
 			"@/*": ["*"]
 		},
 		"strict": true
