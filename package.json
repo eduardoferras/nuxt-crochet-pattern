@@ -6,8 +6,8 @@
 		"changeset": "changeset",
 		"version": "changeset version && pnpm install",
 		"release": "changeset publish",
-		"lint": "pnpm -r run lint",
-		"test": "pnpm -r run test"
+		"lint": "pnpm -r lint",
+		"test": "pnpm -r test"
 	},
 	"devDependencies": {
 		"@changesets/cli": "2.29.8"
