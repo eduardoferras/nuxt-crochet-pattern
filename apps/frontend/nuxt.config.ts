@@ -69,6 +69,7 @@ export default defineNuxtConfig({
 		'@composables': fileURLToPath(new URL('./src/composables', import.meta.url)),
 		'@validations': fileURLToPath(new URL('./src/validations', import.meta.url)),
 		'@interfaces': fileURLToPath(new URL('./src/interfaces', import.meta.url)),
-		'@services': fileURLToPath(new URL('./src/services', import.meta.url))
+		'@services': fileURLToPath(new URL('./src/services', import.meta.url)),
+		'@utils': fileURLToPath(new URL('./src/utils', import.meta.url))
 	}
 })

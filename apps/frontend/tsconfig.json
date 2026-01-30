@@ -8,6 +8,7 @@
 			"@validations/*": ["validations/*"],
 			"@interfaces/*": ["interfaces/*"],
 			"@services/*": ["services/*"],
+			"@utils/*": ["utils/*"],
 			"@/*": ["*"]
 		},
 		"strict": true
