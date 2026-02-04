@@ -1,0 +1,97 @@
+<script setup lang="ts">
+import SignInForm from '@components/sign-in-form.vue'
+
+useHead({
+	title: 'Entrar'
+})
+
+definePageMeta({
+	layout: false
+})
+</script>
+<template>
+	<div class="wrapper">
+		<AppContainer>
+			<div class="content">
+				<AppLink to="/" class="link-home">
+					<Icon name="material-symbols:arrow-back" size="16" />
+					Voltar para a loja
+				</AppLink>
+				<div class="signIn-container">
+					<div class="signIn-header">
+						<SvgIcon
+							name="short-logo"
+							label="Logo Receitas de Crochê"
+							role="img"
+							width="32"
+							height="36"
+							color="#683000"
+							class="signIn-logo"
+						/>
+						<h1 class="signIn-title">Bem-vindo(a) de volta!</h1>
+						<p class="signIn-description">Entre para acessar suas receitas favoritas</p>
+					</div>
+					<SignInForm />
+				</div>
+			</div>
+		</AppContainer>
+	</div>
+</template>
+<style lang="scss">
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	background: linear-gradient(to bottom right, #c93f1d, #c93f1de6, #f96706);
+}
+
+.content {
+	padding: 1.6rem 0;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 44.8rem;
+	flex: 1;
+}
+
+.link-home {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	margin-bottom: 2.4rem;
+	font: 400 1.6rem / 1.2 $font-body;
+	color: #eee3d3;
+	width: fit-content;
+}
+
+.signIn {
+	&-container {
+		background-color: #fffffff2;
+		border-radius: 1.4rem;
+		padding: 2.4rem;
+	}
+
+	&-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.8rem;
+	}
+
+	&-logo {
+		margin-bottom: 0.8rem;
+	}
+
+	&-title {
+		font: 700 2.4rem / 1.2 $font-heading;
+		color: #281c15;
+	}
+
+	&-description {
+		font: 400 1.4rem / 1.2 $font-body;
+		text-align: center;
+		color: #756157;
+		margin-bottom: 1.6rem;
+	}
+}
+</style>
