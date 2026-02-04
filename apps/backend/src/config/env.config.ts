@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+const domainRoot = new URL(process.env.FRONTEND_URL ?? "http://localhost:3000")
+	.hostname;
+
 const envSchema = z.object({
 	PORT: z.coerce.number().default(3002),
 	SERVER_URL: z.string().url(),
@@ -17,6 +20,8 @@ const envSchema = z.object({
 	DB_URL: z.string().url(),
 	PGADMIN_USERNAME: z.string(),
 	PGADMIN_PASSWORD: z.string(),
+	NODE_ENV: z.string(),
+	DOMAIN_ROOT: z.string().default(domainRoot),
 });
 
 export const env = envSchema.parse(process.env);
