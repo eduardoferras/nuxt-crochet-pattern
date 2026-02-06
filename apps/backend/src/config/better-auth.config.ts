@@ -42,6 +42,7 @@ export const auth = betterAuth({
 	],
 	emailAndPassword: {
 		enabled: true,
+		minPasswordLength: 6,
 		sendResetPassword: async ({ user, url }) => {
 			const resetPasswordTemplate = await render(
 				PasswordResetEmail({ resetLink: url, userEmail: user.email }),
