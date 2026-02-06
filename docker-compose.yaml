@@ -12,6 +12,7 @@ services:
     depends_on:
       - redis
       - db
+      - react-email
     build: .
     container_name: crochet-patterns-backend
     working_dir: /home/node/app/apps/backend
