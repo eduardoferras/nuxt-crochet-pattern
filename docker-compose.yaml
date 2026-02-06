@@ -46,3 +46,18 @@ services:
     stdin_open: true
     extra_hosts:
       - "localhost:host-gateway"
+
+  react-email:
+    build: .
+    container_name: crochet-patterns-react-email
+    working_dir: /home/node/app/packages/transactional
+    environment:
+      NODE_ENV: development
+      CI: true
+    volumes:
+      - .:/home/node/app:cached
+    ports:
+      - 3003:3003
+    command: ["sh", "-c", "pnpm --filter @rdc/transactional install --frozen-lockfile && pnpm --filter @rdc/transactional dev"]
+    tty: true
+    stdin_open: true
