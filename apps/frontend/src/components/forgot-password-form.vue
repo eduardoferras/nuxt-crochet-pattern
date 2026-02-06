@@ -1,39 +1,28 @@
 <script setup lang="ts">
 import AppDivider from '@components/UI/AppDivider.vue'
-import CheckboxField from '@components/UI/CheckboxField.vue'
 import InputField from '@components/UI/InputField.vue'
 import LabelField from '@components/UI/LabelField.vue'
-import type { SignIn } from '@interfaces/sign-in.interface'
-import signIn from '@services/auth/sign-in.service'
-import { signInSchema } from '@validations/sign-in.validation'
+import type { ForgotPassword } from '@interfaces/forgot-password.interface'
+import forgotPassword from '@services/auth/forgot-password.service'
+import { forgotPasswordSchema } from '@validations/forgot-password.validation'
 import { toast } from 'vue-sonner'
 
-const { errors, meta, isSubmitting, handleSubmit } = useForm<SignIn>({
-	validationSchema: signInSchema,
-	initialValues: {
-		rememberMe: true
-	}
+const { errors, meta, isSubmitting, handleSubmit, resetForm } = useForm<ForgotPassword>({
+	validationSchema: forgotPasswordSchema
 })
 
-const { value: rememberMe } = useField<boolean>('rememberMe')
-
-const showPassword = ref(false)
-const route = useRoute()
-const redirect_uri = route.query.redirect ? route.query.redirect.toString() : '/'
-
-const onSubmit = handleSubmit(async (data: SignIn) => {
+const onSubmit = handleSubmit(async (data: ForgotPassword) => {
 	try {
-		await signIn(data)
-
-		await new Promise((resolve) => setTimeout(resolve, 2000))
-		await navigateTo(redirect_uri)
+		await forgotPassword(data)
+		toast.success('Link de redefinição enviado, caso o e-mail esteja cadastrado.')
+		resetForm()
 	} catch (error) {
-		console.error('Erro ao logar:', error)
+		console.error('Erro forgotPassword page:', error)
 
 		const err = error as AuthClientError
 
 		if (err.code) {
-			toast.error(err.message || 'Erro ao entrar. Tente novamente mais tarde.')
+			toast.error(err.message || 'Erro ao redefinir senha. Tente novamente mais tarde.')
 		} else {
 			toast.error('Erro inesperado. Tente novamente mais tarde.')
 		}
@@ -41,7 +30,7 @@ const onSubmit = handleSubmit(async (data: SignIn) => {
 })
 </script>
 <template>
-	<form class="signIn-form" @submit.prevent="onSubmit">
+	<form class="forgotPassword-form" @submit.prevent="onSubmit">
 		<div class="field-container">
 			<LabelField label="Email" for="email" />
 			<div class="field-input-container" :class="{ 'field-error': errors.email }">
@@ -56,49 +45,14 @@ const onSubmit = handleSubmit(async (data: SignIn) => {
 			</div>
 			<span v-if="errors.email" class="error">{{ errors.email }}</span>
 		</div>
-		<div class="field-container">
-			<LabelField label="Senha" for="password" />
-			<div class="field-input-container" :class="{ 'field-error': errors.password }">
-				<Icon name="charm:padlock" size="16" style="color: #756157" />
-				<InputField
-					id="password"
-					name="password"
-					:type="showPassword ? 'text' : 'password'"
-					placeholder="••••••"
-					style="padding-top: 0.5rem"
-				/>
-				<Icon
-					:name="
-						showPassword
-							? 'material-symbols:visibility-off-outline-rounded'
-							: 'material-symbols:visibility-outline-rounded'
-					"
-					size="16"
-					style="color: #756157"
-					@click="showPassword = !showPassword"
-				/>
-			</div>
-			<span v-if="errors.password" class="error">{{ errors.password }}</span>
-		</div>
-		<div class="field-actions">
-			<div class="remember-me" @click="rememberMe = !rememberMe">
-				<CheckboxField id="rememberMe" name="rememberMe" :checked="rememberMe" />
-				<LabelField label="Manter conectado" for="rememberMe" />
-			</div>
-			<span v-if="errors.rememberMe" class="error">{{ errors.rememberMe }}</span>
-			<p class="forgot-password">
-				<AppLink to="/esqueci-a-senha" class="login-link">Esqueceu a senha?</AppLink>
-			</p>
-		</div>
 		<button class="btn btn--submit" type="submit" :disabled="!meta.valid">
-			<template v-if="!isSubmitting">Entrar</template>
+			<template v-if="!isSubmitting">Enviar link de redefinição</template>
 			<template v-else>
 				<AppLoading />
 			</template>
 		</button>
 		<p class="login-container">
-			Não tem uma conta?
-			<AppLink to="/crie-sua-conta" class="login-link">Cadastre-se</AppLink>
+			<AppLink to="/entrar" class="login-link">Voltar para o login</AppLink>
 		</p>
 		<AppDivider />
 		<p class="accept-terms">
@@ -116,7 +70,7 @@ const onSubmit = handleSubmit(async (data: SignIn) => {
 </template>
 
 <style scoped lang="scss">
-.signIn {
+.forgotPassword {
 	&-form {
 		display: flex;
 		flex-direction: column;
@@ -188,20 +142,6 @@ const onSubmit = handleSubmit(async (data: SignIn) => {
 		&:hover {
 			color: #c93f1dcc;
 		}
-	}
-}
-
-.remember-me {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.8rem;
-
-	.field-label {
-		line-height: 1.6rem;
-		cursor: pointer;
-		color: #756157;
-		font-weight: 400;
 	}
 }
 
