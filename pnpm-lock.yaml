@@ -14,6 +14,12 @@ importers:
 
   apps/backend:
     dependencies:
+      '@rdc/transactional':
+        specifier: workspace:*
+        version: link:../../packages/transactional
+      '@react-email/render':
+        specifier: 2.0.4
+        version: 2.0.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       better-auth:
         specifier: 1.4.13
         version: 1.4.13(drizzle-kit@0.31.8)(drizzle-orm@0.45.1(@types/pg@8.16.0)(kysely@0.28.10)(pg@8.17.1))(next@16.0.11(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(sass@1.97.2))(pg@8.17.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vitest@4.0.17(@types/node@25.2.1)(happy-dom@17.6.3)(jiti@2.6.1)(lightningcss@1.31.0)(sass-embedded@1.97.2)(sass@1.97.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
