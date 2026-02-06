@@ -13,7 +13,8 @@ export default defineNuxtPlugin(() => {
 			authClient,
 			signUp: authClient.signUp,
 			signIn: authClient.signIn,
-			signOut: authClient.signOut
+			signOut: authClient.signOut,
+			forgotPassword: authClient.requestPasswordReset
 		}
 	}
 })
