@@ -1,4 +1,5 @@
 import { Img, Section } from "@react-email/components";
+// biome-ignore lint/correctness/noUnusedImports: This import is required for the compiler to recognize the file as a .tsx React file.
 import * as React from "react";
 
 const logoSection = {
