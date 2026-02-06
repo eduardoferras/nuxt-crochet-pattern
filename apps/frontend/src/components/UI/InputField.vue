@@ -1,6 +1,5 @@
 <template>
 	<input v-model="value" v-bind="$attrs" class="field-input" />
-	<span class="error">{{ errorMessage }}</span>
 </template>
 
 <script setup>
@@ -11,7 +10,7 @@ const inputProps = defineProps({
 		required: true
 	}
 })
-const { value, errorMessage } = useField(() => inputProps.name)
+const { value } = useField(() => inputProps.name)
 </script>
 
 <style scoped lang="scss">
@@ -30,9 +29,5 @@ const { value, errorMessage } = useField(() => inputProps.name)
 		-webkit-text-fill-color: #281c15 !important;
 		transition: background-color 5000s ease-in-out 0s;
 	}
-}
-.error {
-	color: #ef4343;
-	font: 400 1.4rem / 1.6 $font-body;
 }
 </style>
