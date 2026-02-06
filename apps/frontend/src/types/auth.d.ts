@@ -7,6 +7,7 @@ declare module 'nuxt/app' {
 		$signIn: ReturnType<typeof createAuthClient>['signIn']
 		$signOut: ReturnType<typeof createAuthClient>['signOut']
 		$forgotPassword: ReturnType<typeof createAuthClient>['requestPasswordReset']
+		$resetPassword: ReturnType<typeof createAuthClient>['resetPassword']
 	}
 }
 
@@ -17,5 +18,6 @@ declare module 'vue' {
 		$signIn: ReturnType<typeof createAuthClient>['signIn']
 		$signOut: ReturnType<typeof createAuthClient>['signOut']
 		$forgotPassword: ReturnType<typeof createAuthClient>['requestPasswordReset']
+		$resetPassword: ReturnType<typeof createAuthClient>['resetPassword']
 	}
 }
