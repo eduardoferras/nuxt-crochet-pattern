@@ -24,8 +24,10 @@
 			"@services/*": ["services/*"],
 			"@validations/*": ["validations/*"],
 			"@db/*": ["db/*"],
+			"@rdc/transactional": ["../../packages/transactional/index.ts"],
 			"@/*": ["*"]
-		}
+		},
+		"jsx": "react-jsx"
 	},
 	"include": ["./src/**/*.ts", "**/*.test.ts", "**/*.spec.ts"],
 	"exclude": ["node_modules"]

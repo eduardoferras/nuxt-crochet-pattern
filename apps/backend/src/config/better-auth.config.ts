@@ -1,5 +1,8 @@
 import { env } from "@config/env.config.ts";
 import db from "@db/index.ts";
+import { PasswordResetEmail } from "@rdc/transactional";
+import { render } from "@react-email/render";
+import sendEmail from "@services/mail.service.ts";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { jwt, openAPI } from "better-auth/plugins";
@@ -39,5 +42,16 @@ export const auth = betterAuth({
 	],
 	emailAndPassword: {
 		enabled: true,
+		sendResetPassword: async ({ user, url }) => {
+			const resetPasswordTemplate = await render(
+				PasswordResetEmail({ resetLink: url, userEmail: user.email }),
+			);
+
+			void sendEmail({
+				to: user.email,
+				subject: "Redefinição de Senha - Receitas de Crochê",
+				body: resetPasswordTemplate,
+			});
+		},
 	},
 });
