@@ -1,24 +1,19 @@
 import type { NextFunction, Request, Response } from "express";
-import { type AnyZodObject, ZodError, type ZodIssue } from "zod";
+import type { ZodObject } from "zod";
 
 const validateBody =
-	(schema: AnyZodObject) =>
-	(req: Request, res: Response, next: NextFunction) => {
-		try {
-			schema.parse(req.body);
+	(schema: ZodObject) => (req: Request, res: Response, next: NextFunction) => {
+		const result = schema.safeParse(req.body);
+		if (result.success) {
 			next();
-		} catch (error) {
-			if (error instanceof ZodError) {
-				const errorMessages = error.errors.map((issue: ZodIssue) => ({
-					field: issue.path.join(".") || "body",
-					message: issue.message,
-					code: issue.code,
-				}));
+		} else {
+			const errorMessages = result.error.issues.map((issue) => ({
+				field: issue.path.join(".") || "body",
+				message: issue.message,
+				code: issue.code,
+			}));
 
-				res.status(400).json({ error: "Invalid data", details: errorMessages });
-			} else {
-				res.status(500).json({ error: "Internal Server Error" });
-			}
+			res.status(400).json({ error: "Invalid data", details: errorMessages });
 		}
 	};
 
