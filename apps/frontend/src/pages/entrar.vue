@@ -19,14 +19,12 @@ definePageMeta({
 				</AppLink>
 				<div class="signIn-container">
 					<div class="signIn-header">
-						<SvgIcon
-							name="short-logo"
-							label="Logo Receitas de Crochê"
-							role="img"
-							width="32"
-							height="36"
-							color="#683000"
+						<Icon
 							class="signIn-logo"
+							name="local:rdc-short-logo"
+							size="36"
+							style="color: #683000"
+							aria-label="Logo Receitas de Crochê"
 						/>
 						<h1 class="signIn-title">Bem-vindo(a) de volta!</h1>
 						<p class="signIn-description">Entre para acessar suas receitas favoritas</p>

@@ -17,14 +17,12 @@ definePageMeta({
 				</AppLink>
 				<div class="forgotPassword-container">
 					<div class="forgotPassword-header">
-						<SvgIcon
-							name="short-logo"
-							label="Logo Receitas de Crochê"
-							role="img"
-							width="32"
-							height="36"
-							color="#683000"
+						<Icon
 							class="forgotPassword-logo"
+							name="local:rdc-short-logo"
+							size="36"
+							style="color: #683000"
+							aria-label="Logo Receitas de Crochê"
 						/>
 						<h1 class="forgotPassword-title">Redefinir senha</h1>
 						<p class="forgotPassword-description">
