@@ -1,14 +1,21 @@
+import { env } from "@config/env.config.ts";
 import { Resend } from "resend";
 import type EmailPayload from "@/types/email.types.ts";
-export default async function sendEmail({ to, subject, body }: EmailPayload) {
+export default async function sendEmail({
+	to,
+	subject,
+	body,
+	attachments,
+}: EmailPayload) {
 	try {
-		const resend = new Resend(process.env.RESEND_API_KEY!);
+		const resend = new Resend(env.RESEND_API_KEY);
 
 		const response = await resend.emails.send({
-			from: process.env.MAIL_SENDER!,
+			from: env.MAIL_SENDER,
 			to,
 			subject,
 			html: body,
+			attachments,
 		});
 
 		if (response.error) {
