@@ -7,12 +7,13 @@ new Worker(
 	"emailQueue",
 	async (job: Job<EmailPayload>) => {
 		try {
-			const { to, subject, body } = job.data;
+			const { to, subject, body, attachments } = job.data;
 
 			await sendEmail({
 				to,
 				subject,
 				body,
+				attachments,
 			});
 
 			console.log(`Email sent to ${to} with subject "${subject}"`);

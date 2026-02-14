@@ -4,17 +4,16 @@ import type { Request, Response } from "express";
 
 export const sendFeedback = async (req: Request, res: Response) => {
 	try {
-		const { feedback }: FeedbackSchema = req.body;
+		const data: FeedbackSchema = req.body;
 
-		if (!feedback || feedback.trim() === "") {
-			return res.status(400).json({ message: "Feedback is required" });
-		}
+		await addFeedbackJob(data);
 
-		await addFeedbackJob(feedback);
-
-		return res.status(200).json({ message: "Feedback received", feedback });
+		return res
+			.status(200)
+			.json({ message: "Feedback received", feedback: data.feedback });
 	} catch (error) {
 		console.error("Error sending feedback:", error);
+
 		return res
 			.status(500)
 			.json({ message: "Internal server error sending feedback" });
