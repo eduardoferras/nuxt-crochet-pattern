@@ -3,13 +3,11 @@
 		<AppContainer>
 			<div class="header__content">
 				<AppLink to="/">
-					<SvgIcon
-						name="rdc-logo"
-						label="Logo Receitas de Crochê"
-						role="img"
-						width="186"
-						height="13"
-						color="#683000"
+					<Icon
+						name="local:rdc-logo"
+						size="13"
+						style="color: #683000"
+						aria-label="Logo Receitas de Crochê"
 					/>
 				</AppLink>
 				<!-- prettier-ignore -->

@@ -64,6 +64,15 @@ export default defineNuxtConfig({
 			}
 		}
 	},
+	icon: {
+		customCollections: [
+			{
+				prefix: 'local',
+				dir: 'src/assets/icons',
+				recursive: true
+			}
+		]
+	},
 	alias: {
 		'@components': fileURLToPath(new URL('./src/components', import.meta.url)),
 		'@composables': fileURLToPath(new URL('./src/composables', import.meta.url)),

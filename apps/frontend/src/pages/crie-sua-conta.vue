@@ -54,14 +54,12 @@ const onSubmit = handleSubmit(async (data: SignUp) => {
 				</AppLink>
 				<div class="signUp-container">
 					<div class="signUp-header">
-						<SvgIcon
-							name="short-logo"
-							label="Logo Receitas de Crochê"
-							role="img"
-							width="32"
-							height="36"
-							color="#683000"
+						<Icon
 							class="signUp-logo"
+							name="local:rdc-short-logo"
+							size="36"
+							style="color: #683000"
+							aria-label="Logo Receitas de Crochê"
 						/>
 						<h1 class="signUp-title">Crie sua conta</h1>
 						<p class="signUp-description">Junte-se à nossa comunidade de crochê</p>
