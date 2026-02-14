@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 export const useFeedbackStore = defineStore('feedback', {
 	state: () => ({
 		isOpen: false,
+		isTakingScreenshot: false,
 		currentStep: -1,
 		steps: feedbackOptions
 	}),
@@ -17,6 +18,9 @@ export const useFeedbackStore = defineStore('feedback', {
 		},
 		resetStep() {
 			this.currentStep = -1
+		},
+		setIsTakingScreenshot(val: boolean) {
+			this.isTakingScreenshot = val
 		}
 	}
 })
