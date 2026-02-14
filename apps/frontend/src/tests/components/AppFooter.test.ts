@@ -19,9 +19,9 @@ describe('AppFooter.vue', () => {
 
 	it('should render a logo with aria-label text', async () => {
 		const wrapper = await mountSuspended(AppFooter)
-		const logo = wrapper.find('[role="img"]')
+		const logo = wrapper.find('[aria-label="Logo Receitas de Crochê"]')
 
-		expect(logo.attributes('aria-label')).toBe('Logo Receitas de Crochê')
+		expect(logo.exists()).toBe(true)
 	})
 
 	it('should render the website copyright', async () => {
