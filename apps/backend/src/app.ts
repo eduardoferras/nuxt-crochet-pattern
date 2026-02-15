@@ -1,11 +1,11 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import registerJobs from "@jobs/index.ts";
 import routes from "@routes/index.ts";
 import cors from "cors";
 import express, { type Application } from "express";
 import "@/workers";
 import { env } from "@config/env.config.ts";
+import { initCrons } from "@crons/index.ts";
 import authRouter from "@routes/auth.route.ts";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,6 +26,6 @@ app.use(express.urlencoded({ limit: "5mb", extended: true }));
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(routes);
 
-registerJobs();
+initCrons();
 
 export default app;
