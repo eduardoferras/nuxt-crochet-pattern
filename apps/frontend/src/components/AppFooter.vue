@@ -18,7 +18,7 @@
 					</section>
 				</div>
 				<section class="footer__copyright" aria-label="copyright">
-					© {{ currentYear }} Receitas de Crochê. Todos os direitos reservados.
+					© 2025 - {{ currentYear }} Receitas de Crochê. Todos os direitos reservados.
 				</section>
 			</div>
 		</AppContainer>
