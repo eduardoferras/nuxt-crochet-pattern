@@ -32,7 +32,7 @@ describe('AppFooter.vue', () => {
 
 		expect(description.exists()).toBe(true)
 		expect(description.text()).toBe(
-			`© ${currentYear} Receitas de Crochê. Todos os direitos reservados.`
+			`© 2025 - ${currentYear} Receitas de Crochê. Todos os direitos reservados.`
 		)
 	})
 
