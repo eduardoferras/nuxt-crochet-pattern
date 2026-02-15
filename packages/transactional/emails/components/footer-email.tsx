@@ -2,7 +2,7 @@ import { Container, Hr, Section, Text } from "@react-email/components";
 // biome-ignore lint/correctness/noUnusedImports: This import is required for the compiler to recognize the file as a .tsx React file.
 import * as React from "react";
 
-const fullYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 
 const hr = {
 	borderColor: "#e5e5e5",
@@ -26,7 +26,8 @@ export default function FooterEmail() {
 			<Hr style={hr} />
 			<Section style={footer}>
 				<Text style={footerSmall}>
-					© {fullYear} Receitas de Crochê. Todos os direitos reservados.
+					© 2025 - {currentYear} Receitas de Crochê. Todos os direitos
+					reservados.
 				</Text>
 				<Text style={footerSmall}>
 					Você está recebendo este email porque solicitou a redefinição de
