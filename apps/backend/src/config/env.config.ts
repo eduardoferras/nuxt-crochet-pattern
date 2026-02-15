@@ -7,7 +7,6 @@ const envSchema = z.object({
 	PORT: z.coerce.number().default(3002),
 	SERVER_URL: z.url(),
 	FRONTEND_URL: z.url().default("http://localhost:3000"),
-	HEALTH_CHECK_URL: z.url(),
 	MAIL_SENDER: z.string(),
 	RESEND_API_KEY: z.string(),
 	REDIS_HOST: z.string(),

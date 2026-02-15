@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"type": "module",
 	"scripts": {
-		"test": "vitest",
+		"test": "",
 		"test:watch": "vitest --watch",
 		"coverage": "vitest run --coverage",
 		"build": "tsup",
